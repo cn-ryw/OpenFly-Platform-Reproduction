@@ -1,0 +1,20 @@
+{
+  "model": "IPEC-COMMUNITY/openfly-agent-7b",
+  "prompt": "Fly forward carefully, avoid obstacles, and move towards the open area.",
+  "image_paths": [
+    "demo_imgs/hist_1.png",
+    "demo_imgs/hist_2.png",
+    "demo_imgs/current.png"
+  ],
+  "unnorm_key": "vln_norm",
+  "predicted_action": [
+    0.9980392156862745,
+    0.009803921568627416,
+    0.02941176470588225,
+    0.02941176470588225,
+    0.0039215686274509665,
+    0.0,
+    0.0,
+    0.0
+  ]
+}

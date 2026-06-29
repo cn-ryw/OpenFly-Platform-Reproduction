@@ -1,0 +1,63 @@
+[Run dir] /home/ruan/research/OpenFly-Platform/demo_results/airsim_smoke/20260629_000613
+{
+  "scene": {
+    "env_dir": "envs/airsim/env_airsim_16",
+    "env_dir_exists": false,
+    "start_script": "envs/airsim/env_airsim_16/LinuxNoEditor/start.sh",
+    "start_script_exists": false
+  },
+  "packages": {
+    "airsim": {
+      "ok": true
+    },
+    "msgpackrpc": {
+      "ok": true
+    }
+  },
+  "nvidia_smi": {
+    "gpu_query": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "NVIDIA GeForce RTX 4060 Laptop GPU, 580.159.03, 8188, 2, 0, 8.9",
+      "stderr": "",
+      "args": [
+        "nvidia-smi",
+        "--query-gpu=name,driver_version,memory.total,memory.used,utilization.gpu,compute_cap",
+        "--format=csv,noheader,nounits"
+      ]
+    },
+    "compute_apps_query": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "args": [
+        "nvidia-smi",
+        "--query-compute-apps=pid,process_name,used_memory",
+        "--format=csv,noheader,nounits"
+      ]
+    }
+  },
+  "selected_samples": [
+    {
+      "sample_index": 0,
+      "image_path": "env_airsim_16/astar_data/medium_average/2025-1-9_13-18-9_387451659",
+      "prompt": "Proceed in a straight line toward the large brown building with rectangular windows . Then , slightly turn right and advance forward to the gray building adorned with numerous large rectangular windows . Finally , make a slight left and continue straight to the gray office building characterized by horizontal window blinds and described as mid-rise .",
+      "action_len": 16
+    },
+    {
+      "sample_index": 1,
+      "image_path": "env_airsim_16/astar_data/low_average/2025-1-1_0-49-51_970925433",
+      "prompt": "Proceed directly towards the tall gray skyscraper featuring a clock tower on top , then make a slight left turn and advance towards the medium - sized beige commercial building with symmetrical windows and a large billboard .",
+      "action_len": 4
+    },
+    {
+      "sample_index": 2,
+      "image_path": "env_airsim_16/astar_data/medium_long/2025-1-9_16-34-14_1894519218",
+      "prompt": "Walk directly towards the beige cylindrical mast with a supporting frame on a rooftop , which is a large telecommunications tower . Then , slightly turn left and move forward to a dark grey tall building with antennas on top , categorized as a large skyscraper . Next , slightly turn right and proceed straight to it . Afterward , slightly turn right again and continue straight towards a gray commercial building with medium - sized dimensions , featuring windows with an arch design and consisting of multiple stories .",
+      "action_len": 17
+    }
+  ]
+}
+[Dry run done] results: /home/ruan/research/OpenFly-Platform/demo_results/airsim_smoke/20260629_000613/results.json
+[Dry run done] summary: /home/ruan/research/OpenFly-Platform/demo_results/airsim_smoke/20260629_000613/summary.md

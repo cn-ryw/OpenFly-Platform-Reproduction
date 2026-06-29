@@ -1,0 +1,3185 @@
+{
+  "created_at": "2026-06-29T00:44:16",
+  "dry_run": false,
+  "repo_root": "/home/ruan/research/OpenFly-Platform",
+  "model": "IPEC-COMMUNITY/openfly-agent-7b",
+  "env_name": "env_airsim_16",
+  "eval_json": "configs/eval_test.json",
+  "unnorm_key": "vlnv1",
+  "vehicle_name": "drone_1",
+  "max_steps": 20,
+  "selected_samples": [
+    {
+      "sample_index": 0,
+      "image_path": "env_airsim_16/astar_data/medium_average/2025-1-9_13-18-9_387451659",
+      "prompt": "Proceed in a straight line toward the large brown building with rectangular windows . Then , slightly turn right and advance forward to the gray building adorned with numerous large rectangular windows . Finally , make a slight left and continue straight to the gray office building characterized by horizontal window blinds and described as mid-rise .",
+      "action_len": 16
+    },
+    {
+      "sample_index": 1,
+      "image_path": "env_airsim_16/astar_data/low_average/2025-1-1_0-49-51_970925433",
+      "prompt": "Proceed directly towards the tall gray skyscraper featuring a clock tower on top , then make a slight left turn and advance towards the medium - sized beige commercial building with symmetrical windows and a large billboard .",
+      "action_len": 4
+    },
+    {
+      "sample_index": 2,
+      "image_path": "env_airsim_16/astar_data/medium_long/2025-1-9_16-34-14_1894519218",
+      "prompt": "Walk directly towards the beige cylindrical mast with a supporting frame on a rooftop , which is a large telecommunications tower . Then , slightly turn left and move forward to a dark grey tall building with antennas on top , categorized as a large skyscraper . Next , slightly turn right and proceed straight to it . Afterward , slightly turn right again and continue straight towards a gray commercial building with medium - sized dimensions , featuring windows with an arch design and consisting of multiple stories .",
+      "action_len": 17
+    }
+  ],
+  "preflight": {
+    "scene": {
+      "env_dir": "envs/airsim/env_airsim_16",
+      "env_dir_exists": true,
+      "start_script": "envs/airsim/env_airsim_16/LinuxNoEditor/start.sh",
+      "start_script_exists": true
+    },
+    "packages": {
+      "airsim": {
+        "ok": true
+      },
+      "msgpackrpc": {
+        "ok": true
+      }
+    },
+    "airsim_settings": {
+      "project_settings": "envs/airsim/AirSim/settings.json",
+      "project_exists": true,
+      "project_sha256": "b4a0afb9c31a2c2344041c6acd6155c3a04e34142eb4b5deffe736f674e1ef0f",
+      "user_settings": "/home/ruan/Documents/AirSim/settings.json",
+      "user_exists": true,
+      "user_sha256": "b4a0afb9c31a2c2344041c6acd6155c3a04e34142eb4b5deffe736f674e1ef0f",
+      "matches_project": true
+    },
+    "nvidia_smi": {
+      "gpu_query": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "NVIDIA GeForce RTX 4060 Laptop GPU, 580.159.03, 8188, 2, 0, 8.9",
+        "stderr": "",
+        "args": [
+          "nvidia-smi",
+          "--query-gpu=name,driver_version,memory.total,memory.used,utilization.gpu,compute_cap",
+          "--format=csv,noheader,nounits"
+        ]
+      },
+      "compute_apps_query": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "args": [
+          "nvidia-smi",
+          "--query-compute-apps=pid,process_name,used_memory",
+          "--format=csv,noheader,nounits"
+        ]
+      }
+    },
+    "selected_samples": [
+      {
+        "sample_index": 0,
+        "image_path": "env_airsim_16/astar_data/medium_average/2025-1-9_13-18-9_387451659",
+        "prompt": "Proceed in a straight line toward the large brown building with rectangular windows . Then , slightly turn right and advance forward to the gray building adorned with numerous large rectangular windows . Finally , make a slight left and continue straight to the gray office building characterized by horizontal window blinds and described as mid-rise .",
+        "action_len": 16
+      },
+      {
+        "sample_index": 1,
+        "image_path": "env_airsim_16/astar_data/low_average/2025-1-1_0-49-51_970925433",
+        "prompt": "Proceed directly towards the tall gray skyscraper featuring a clock tower on top , then make a slight left turn and advance towards the medium - sized beige commercial building with symmetrical windows and a large billboard .",
+        "action_len": 4
+      },
+      {
+        "sample_index": 2,
+        "image_path": "env_airsim_16/astar_data/medium_long/2025-1-9_16-34-14_1894519218",
+        "prompt": "Walk directly towards the beige cylindrical mast with a supporting frame on a rooftop , which is a large telecommunications tower . Then , slightly turn left and move forward to a dark grey tall building with antennas on top , categorized as a large skyscraper . Next , slightly turn right and proceed straight to it . Afterward , slightly turn right again and continue straight towards a gray commercial building with medium - sized dimensions , featuring windows with an arch design and consisting of multiple stories .",
+        "action_len": 17
+      }
+    ]
+  },
+  "airsim_settings_preparation": {
+    "changed": false,
+    "backup_path": null,
+    "backup_copied_to_run_dir": null,
+    "before": {
+      "project_settings": "envs/airsim/AirSim/settings.json",
+      "project_exists": true,
+      "project_sha256": "b4a0afb9c31a2c2344041c6acd6155c3a04e34142eb4b5deffe736f674e1ef0f",
+      "user_settings": "/home/ruan/Documents/AirSim/settings.json",
+      "user_exists": true,
+      "user_sha256": "b4a0afb9c31a2c2344041c6acd6155c3a04e34142eb4b5deffe736f674e1ef0f",
+      "matches_project": true
+    },
+    "after": {
+      "project_settings": "envs/airsim/AirSim/settings.json",
+      "project_exists": true,
+      "project_sha256": "b4a0afb9c31a2c2344041c6acd6155c3a04e34142eb4b5deffe736f674e1ef0f",
+      "user_settings": "/home/ruan/Documents/AirSim/settings.json",
+      "user_exists": true,
+      "user_sha256": "b4a0afb9c31a2c2344041c6acd6155c3a04e34142eb4b5deffe736f674e1ef0f",
+      "matches_project": true
+    }
+  },
+  "results": [
+    {
+      "sample_index": 0,
+      "image_path": "env_airsim_16/astar_data/medium_average/2025-1-9_13-18-9_387451659",
+      "prompt": "Proceed in a straight line toward the large brown building with rectangular windows . Then , slightly turn right and advance forward to the gray building adorned with numerous large rectangular windows . Finally , make a slight left and continue straight to the gray office building characterized by horizontal window blinds and described as mid-rise .",
+      "ground_truth_action": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        3,
+        9,
+        1,
+        2,
+        9,
+        9,
+        9,
+        9,
+        0
+      ],
+      "ground_truth_action_len": 16,
+      "start_position": [
+        -1081.489625285631,
+        -209.81771694551878,
+        30.45824585413169
+      ],
+      "end_position": [
+        -1075.489625285631,
+        -106.42541210010552,
+        30.45824585413169
+      ],
+      "start_yaw": 1.5707963267948966,
+      "pitch": 0.0,
+      "max_steps": 20,
+      "steps_run": 12,
+      "action_steps": [
+        {
+          "step": 0,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1081.489625285631,
+            -200.81771694551878,
+            30.45824585413169,
+            1.5707963267948966
+          ],
+          "distance_to_goal": 94.58280612262162,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 1,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1081.489625285631,
+            -191.81771694551878,
+            30.45824585413169,
+            1.5707963267948966
+          ],
+          "distance_to_goal": 85.60283714230499,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 2,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1081.489625285631,
+            -182.81771694551878,
+            30.45824585413169,
+            1.5707963267948966
+          ],
+          "distance_to_goal": 76.62756840455366,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 3,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1081.489625285631,
+            -173.81771694551878,
+            30.45824585413169,
+            1.5707963267948966
+          ],
+          "distance_to_goal": 67.65887046335546,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 4,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1081.489625285631,
+            -164.81771694551878,
+            30.45824585413169,
+            1.5707963267948966
+          ],
+          "distance_to_goal": 58.699755239350644,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 5,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1081.489625285631,
+            -155.81771694551878,
+            30.45824585413169,
+            1.5707963267948966
+          ],
+          "distance_to_goal": 49.75539948530445,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 6,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1081.489625285631,
+            -146.81771694551878,
+            30.45824585413169,
+            1.5707963267948966
+          ],
+          "distance_to_goal": 40.835502821990524,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 7,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1081.489625285631,
+            -137.81771694551878,
+            30.45824585413169,
+            1.5707963267948966
+          ],
+          "distance_to_goal": 31.960550738486297,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 8,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1081.489625285631,
+            -128.81771694551878,
+            30.45824585413169,
+            1.5707963267948966
+          ],
+          "distance_to_goal": 23.18221983093764,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 9,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1081.489625285631,
+            -119.81771694551878,
+            30.45824585413169,
+            1.5707963267948966
+          ],
+          "distance_to_goal": 14.674938809837661,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 10,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1081.489625285631,
+            -110.81771694551878,
+            30.45824585413169,
+            1.5707963267948966
+          ],
+          "distance_to_goal": 7.435882049564856,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 11,
+          "raw_action": [
+            0.9980392156862745,
+            0.01764705882352935,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 0,
+          "nearest_template": {
+            "action_id": 0,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 0.04522573566537551,
+              "1": 3.145193387631013,
+              "2": 15.003858532303035,
+              "3": 15.003858532303035,
+              "4": 2.2356484067355096,
+              "5": 2.2356484067355096,
+              "6": 5.098835533584019,
+              "7": 5.098835533584019,
+              "8": 6.065175932539523,
+              "9": 9.037725197178519
+            }
+          },
+          "pose_after_action": [
+            -1081.489625285631,
+            -110.81771694551878,
+            30.45824585413169,
+            1.5707963267948966
+          ],
+          "distance_to_goal": 7.435882049564856,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        }
+      ],
+      "predicted_action_ids": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        0
+      ],
+      "final_pose": [
+        -1081.489625285631,
+        -110.81771694551878,
+        30.45824585413169,
+        1.5707963267948966
+      ],
+      "traj_len": 103.56625271412916,
+      "pass_len": 99.001,
+      "distance_to_goal": 7.435882049564856,
+      "success": 1,
+      "osr": 1,
+      "spl": 1.0461131979892038,
+      "image_error": null
+    },
+    {
+      "sample_index": 1,
+      "image_path": "env_airsim_16/astar_data/low_average/2025-1-1_0-49-51_970925433",
+      "prompt": "Proceed directly towards the tall gray skyscraper featuring a clock tower on top , then make a slight left turn and advance towards the medium - sized beige commercial building with symmetrical windows and a large billboard .",
+      "ground_truth_action": [
+        9,
+        2,
+        8,
+        0
+      ],
+      "ground_truth_action_len": 4,
+      "start_position": [
+        -184.52495401797705,
+        -594.2453859630077,
+        23.016633069974613
+      ],
+      "end_position": [
+        -177.82880159527042,
+        -599.8434621743611,
+        23.016633069974613
+      ],
+      "start_yaw": -1.0471975511966072,
+      "pitch": 0.0,
+      "max_steps": 20,
+      "steps_run": 20,
+      "action_steps": [
+        {
+          "step": 0,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -180.02495401797714,
+            -602.0396145970677,
+            23.016633069974613,
+            -1.0471975511966072
+          ],
+          "distance_to_goal": 3.1058285412303097,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 1,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -175.52495401797722,
+            -609.8338432311277,
+            23.016633069974613,
+            -1.0471975511966072
+          ],
+          "distance_to_goal": 10.252581495350398,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 2,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -171.0249540179773,
+            -617.6280718651877,
+            23.016633069974613,
+            -1.0471975511966072
+          ],
+          "distance_to_goal": 19.04165653797175,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 3,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -166.5249540179774,
+            -625.4223004992477,
+            23.016633069974613,
+            -1.0471975511966072
+          ],
+          "distance_to_goal": 27.96522733863187,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 4,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -162.02495401797748,
+            -633.2165291333077,
+            23.016633069974613,
+            -1.0471975511966072
+          ],
+          "distance_to_goal": 36.92591497163807,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 5,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -157.52495401797756,
+            -641.0107577673677,
+            23.016633069974613,
+            -1.0471975511966072
+          ],
+          "distance_to_goal": 45.901987461153865,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 6,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -153.02495401797765,
+            -648.8049864014278,
+            23.016633069974613,
+            -1.0471975511966072
+          ],
+          "distance_to_goal": 54.88589718019747,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 7,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -148.52495401797773,
+            -656.5992150354878,
+            23.016633069974613,
+            -1.0471975511966072
+          ],
+          "distance_to_goal": 63.874337301192334,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 8,
+          "raw_action": [
+            0.0019607843137254832,
+            3.01764705882353,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 1,
+          "nearest_template": {
+            "action_id": 1,
+            "l2_distance": 0.04522573566537568,
+            "all_l2": {
+              "0": 3.178679938509098,
+              "1": 0.04522573566537568,
+              "2": 15.271724682527877,
+              "3": 15.271724682527877,
+              "4": 3.6204872213705785,
+              "5": 3.6204872213705785,
+              "6": 5.8401992877048,
+              "7": 5.8401992877048,
+              "8": 2.982643628431881,
+              "9": 5.982497861368955
+            }
+          },
+          "pose_after_action": [
+            -147.02495401797776,
+            -659.1972912468411,
+            23.016633069974613,
+            -1.0471975511966072
+          ],
+          "distance_to_goal": 66.87117503925181,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 9,
+          "raw_action": [
+            0.0019607843137254832,
+            3.01764705882353,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 1,
+          "nearest_template": {
+            "action_id": 1,
+            "l2_distance": 0.04522573566537568,
+            "all_l2": {
+              "0": 3.178679938509098,
+              "1": 0.04522573566537568,
+              "2": 15.271724682527877,
+              "3": 15.271724682527877,
+              "4": 3.6204872213705785,
+              "5": 3.6204872213705785,
+              "6": 5.8401992877048,
+              "7": 5.8401992877048,
+              "8": 2.982643628431881,
+              "9": 5.982497861368955
+            }
+          },
+          "pose_after_action": [
+            -145.5249540179778,
+            -661.7953674581945,
+            23.016633069974613,
+            -1.0471975511966072
+          ],
+          "distance_to_goal": 69.86828419672278,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 10,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -141.02495401797788,
+            -669.5895960922545,
+            23.016633069974613,
+            -1.0471975511966072
+          ],
+          "distance_to_goal": 78.86093071341033,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 11,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -136.52495401797796,
+            -677.3838247263145,
+            23.016633069974613,
+            -1.0471975511966072
+          ],
+          "distance_to_goal": 87.85508323015003,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 12,
+          "raw_action": [
+            0.0019607843137254832,
+            3.01764705882353,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 1,
+          "nearest_template": {
+            "action_id": 1,
+            "l2_distance": 0.04522573566537568,
+            "all_l2": {
+              "0": 3.178679938509098,
+              "1": 0.04522573566537568,
+              "2": 15.271724682527877,
+              "3": 15.271724682527877,
+              "4": 3.6204872213705785,
+              "5": 3.6204872213705785,
+              "6": 5.8401992877048,
+              "7": 5.8401992877048,
+              "8": 2.982643628431881,
+              "9": 5.982497861368955
+            }
+          },
+          "pose_after_action": [
+            -135.024954017978,
+            -679.9819009376679,
+            23.016633069974613,
+            -1.0471975511966072
+          ],
+          "distance_to_goal": 90.85339143279329,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 13,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -130.52495401797808,
+            -687.7761295717279,
+            23.016633069974613,
+            -1.0471975511966072
+          ],
+          "distance_to_goal": 99.84892583914782,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 14,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -126.02495401797815,
+            -695.5703582057879,
+            23.016633069974613,
+            -1.0471975511966072
+          ],
+          "distance_to_goal": 108.84519855107494,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 15,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -121.52495401797822,
+            -703.3645868398479,
+            23.016633069974613,
+            -1.0471975511966072
+          ],
+          "distance_to_goal": 117.84204047798143,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 16,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -117.02495401797829,
+            -711.1588154739079,
+            23.016633069974613,
+            -1.0471975511966072
+          ],
+          "distance_to_goal": 126.8393304949435,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 17,
+          "raw_action": [
+            0.0019607843137254832,
+            0.01764705882352935,
+            14.970588235294118,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            0,
+            15,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 2,
+          "nearest_template": {
+            "action_id": 2,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 15.003858532303035,
+              "1": 15.264789879754284,
+              "2": 0.04522573566537551,
+              "3": 21.171616364482272,
+              "4": 15.103631762791027,
+              "5": 15.103631762791027,
+              "6": 15.78352598204818,
+              "7": 15.78352598204818,
+              "8": 16.121660203592796,
+              "9": 17.458580852038533
+            }
+          },
+          "pose_after_action": [
+            -117.02495401797829,
+            -711.1588154739079,
+            23.016633069974613,
+            -0.5235987755983085
+          ],
+          "distance_to_goal": 126.8393304949435,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 18,
+          "raw_action": [
+            0.0019607843137254832,
+            0.01764705882352935,
+            14.970588235294118,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            0,
+            15,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 2,
+          "nearest_template": {
+            "action_id": 2,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 15.003858532303035,
+              "1": 15.264789879754284,
+              "2": 0.04522573566537551,
+              "3": 21.171616364482272,
+              "4": 15.103631762791027,
+              "5": 15.103631762791027,
+              "6": 15.78352598204818,
+              "7": 15.78352598204818,
+              "8": 16.121660203592796,
+              "9": 17.458580852038533
+            }
+          },
+          "pose_after_action": [
+            -117.02495401797829,
+            -711.1588154739079,
+            23.016633069974613,
+            -9.769962616701378e-15
+          ],
+          "distance_to_goal": 126.8393304949435,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 19,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -108.02495401797829,
+            -711.158815473908,
+            23.016633069974613,
+            -9.769962616701378e-15
+          ],
+          "distance_to_goal": 131.3913430055298,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        }
+      ],
+      "predicted_action_ids": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        1,
+        1,
+        9,
+        9,
+        1,
+        9,
+        9,
+        9,
+        9,
+        2,
+        2,
+        9
+      ],
+      "final_pose": [
+        -108.02495401797829,
+        -711.158815473908,
+        23.016633069974613,
+        -9.769962616701378e-15
+      ],
+      "traj_len": 8.727938733529266,
+      "pass_len": 144.0010000000002,
+      "distance_to_goal": 131.3913430055298,
+      "success": 0,
+      "osr": 1,
+      "spl": 0.0,
+      "image_error": null
+    },
+    {
+      "sample_index": 2,
+      "image_path": "env_airsim_16/astar_data/medium_long/2025-1-9_16-34-14_1894519218",
+      "prompt": "Walk directly towards the beige cylindrical mast with a supporting frame on a rooftop , which is a large telecommunications tower . Then , slightly turn left and move forward to a dark grey tall building with antennas on top , categorized as a large skyscraper . Next , slightly turn right and proceed straight to it . Afterward , slightly turn right again and continue straight towards a gray commercial building with medium - sized dimensions , featuring windows with an arch design and consisting of multiple stories .",
+      "ground_truth_action": [
+        9,
+        9,
+        9,
+        2,
+        9,
+        8,
+        3,
+        9,
+        9,
+        3,
+        9,
+        9,
+        9,
+        9,
+        9,
+        8,
+        0
+      ],
+      "ground_truth_action_len": 17,
+      "start_position": [
+        -1055.2651545146757,
+        -220.7180007023675,
+        36.85503417715102
+      ],
+      "end_position": [
+        -1147.5401452622696,
+        -253.20838175913408,
+        36.85503417715102
+      ],
+      "start_yaw": -2.6179938779915037,
+      "pitch": 0.0,
+      "max_steps": 20,
+      "steps_run": 20,
+      "action_steps": [
+        {
+          "step": 0,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1063.0593831487356,
+            -225.21800070236742,
+            36.85503417715102,
+            -2.6179938779915037
+          ],
+          "distance_to_goal": 88.9969696056361,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        },
+        {
+          "step": 1,
+          "raw_action": [
+            0.0019607843137254832,
+            0.01764705882352935,
+            0.02941176470588225,
+            14.970588235294118,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            0,
+            0,
+            15,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 3,
+          "nearest_template": {
+            "action_id": 3,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 15.003858532303035,
+              "1": 15.264789879754284,
+              "2": 21.171616364482272,
+              "3": 0.04522573566537551,
+              "4": 15.103631762791027,
+              "5": 15.103631762791027,
+              "6": 15.78352598204818,
+              "7": 15.78352598204818,
+              "8": 16.121660203592793,
+              "9": 17.45858085203853
+            }
+          },
+          "pose_after_action": [
+            -1063.0593831487356,
+            -225.21800070236742,
+            36.85503417715102,
+            3.1415926535897842
+          ],
+          "distance_to_goal": 88.9969696056361,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        },
+        {
+          "step": 2,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1072.0593831487356,
+            -225.21800070236733,
+            36.85503417715102,
+            3.1415926535897842
+          ],
+          "distance_to_goal": 80.50345881353739,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        },
+        {
+          "step": 3,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1081.0593831487356,
+            -225.21800070236725,
+            36.85503417715102,
+            3.1415926535897842
+          ],
+          "distance_to_goal": 72.13288544692568,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        },
+        {
+          "step": 4,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1090.0593831487356,
+            -225.21800070236716,
+            36.85503417715102,
+            3.1415926535897842
+          ],
+          "distance_to_goal": 63.93355492114995,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        },
+        {
+          "step": 5,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1099.0593831487356,
+            -225.21800070236708,
+            36.85503417715102,
+            3.1415926535897842
+          ],
+          "distance_to_goal": 55.98076211353406,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        },
+        {
+          "step": 6,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1108.0593831487356,
+            -225.218000702367,
+            36.85503417715102,
+            3.1415926535897842
+          ],
+          "distance_to_goal": 48.39619828838299,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        },
+        {
+          "step": 7,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1117.0593831487356,
+            -225.2180007023669,
+            36.85503417715102,
+            3.1415926535897842
+          ],
+          "distance_to_goal": 41.38282603598838,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        },
+        {
+          "step": 8,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1126.0593831487356,
+            -225.21800070236682,
+            36.85503417715102,
+            3.1415926535897842
+          ],
+          "distance_to_goal": 35.28292182744042,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        },
+        {
+          "step": 9,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1135.0593831487356,
+            -225.21800070236674,
+            36.85503417715102,
+            3.1415926535897842
+          ],
+          "distance_to_goal": 30.646873488786177,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        },
+        {
+          "step": 10,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1144.0593831487356,
+            -225.21800070236665,
+            36.85503417715102,
+            3.1415926535897842
+          ],
+          "distance_to_goal": 28.205976965779055,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        },
+        {
+          "step": 11,
+          "raw_action": [
+            0.0019607843137254832,
+            0.01764705882352935,
+            0.02941176470588225,
+            14.970588235294118,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            0,
+            0,
+            15,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 3,
+          "nearest_template": {
+            "action_id": 3,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 15.003858532303035,
+              "1": 15.264789879754284,
+              "2": 21.171616364482272,
+              "3": 0.04522573566537551,
+              "4": 15.103631762791027,
+              "5": 15.103631762791027,
+              "6": 15.78352598204818,
+              "7": 15.78352598204818,
+              "8": 16.121660203592793,
+              "9": 17.45858085203853
+            }
+          },
+          "pose_after_action": [
+            -1144.0593831487356,
+            -225.21800070236665,
+            36.85503417715102,
+            2.617993877991486
+          ],
+          "distance_to_goal": 28.205976965779055,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        },
+        {
+          "step": 12,
+          "raw_action": [
+            0.0019607843137254832,
+            3.01764705882353,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 1,
+          "nearest_template": {
+            "action_id": 1,
+            "l2_distance": 0.04522573566537568,
+            "all_l2": {
+              "0": 3.178679938509098,
+              "1": 0.04522573566537568,
+              "2": 15.271724682527877,
+              "3": 15.271724682527877,
+              "4": 3.6204872213705785,
+              "5": 3.6204872213705785,
+              "6": 5.8401992877048,
+              "7": 5.8401992877048,
+              "8": 2.982643628431881,
+              "9": 5.982497861368955
+            }
+          },
+          "pose_after_action": [
+            -1146.657459360089,
+            -223.71800070236662,
+            36.85503417715102,
+            2.617993877991486
+          ],
+          "distance_to_goal": 29.50358807459285,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        },
+        {
+          "step": 13,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1154.4516879941489,
+            -219.21800070236657,
+            36.85503417715102,
+            2.617993877991486
+          ],
+          "distance_to_goal": 34.68595432331153,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        },
+        {
+          "step": 14,
+          "raw_action": [
+            0.0019607843137254832,
+            0.01764705882352935,
+            0.02941176470588225,
+            14.970588235294118,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            0,
+            0,
+            15,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 3,
+          "nearest_template": {
+            "action_id": 3,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 15.003858532303035,
+              "1": 15.264789879754284,
+              "2": 21.171616364482272,
+              "3": 0.04522573566537551,
+              "4": 15.103631762791027,
+              "5": 15.103631762791027,
+              "6": 15.78352598204818,
+              "7": 15.78352598204818,
+              "8": 16.121660203592793,
+              "9": 17.45858085203853
+            }
+          },
+          "pose_after_action": [
+            -1154.4516879941489,
+            -219.21800070236657,
+            36.85503417715102,
+            2.0943951023931877
+          ],
+          "distance_to_goal": 34.68595432331153,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        },
+        {
+          "step": 15,
+          "raw_action": [
+            0.0019607843137254832,
+            0.01764705882352935,
+            0.02941176470588225,
+            14.970588235294118,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            0,
+            0,
+            15,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 3,
+          "nearest_template": {
+            "action_id": 3,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 15.003858532303035,
+              "1": 15.264789879754284,
+              "2": 21.171616364482272,
+              "3": 0.04522573566537551,
+              "4": 15.103631762791027,
+              "5": 15.103631762791027,
+              "6": 15.78352598204818,
+              "7": 15.78352598204818,
+              "8": 16.121660203592793,
+              "9": 17.45858085203853
+            }
+          },
+          "pose_after_action": [
+            -1154.4516879941489,
+            -219.21800070236657,
+            36.85503417715102,
+            1.5707963267948895
+          ],
+          "distance_to_goal": 34.68595432331153,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        },
+        {
+          "step": 16,
+          "raw_action": [
+            0.0019607843137254832,
+            0.01764705882352935,
+            0.02941176470588225,
+            14.970588235294118,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            0,
+            0,
+            15,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 3,
+          "nearest_template": {
+            "action_id": 3,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 15.003858532303035,
+              "1": 15.264789879754284,
+              "2": 21.171616364482272,
+              "3": 0.04522573566537551,
+              "4": 15.103631762791027,
+              "5": 15.103631762791027,
+              "6": 15.78352598204818,
+              "7": 15.78352598204818,
+              "8": 16.121660203592793,
+              "9": 17.45858085203853
+            }
+          },
+          "pose_after_action": [
+            -1154.4516879941489,
+            -219.21800070236657,
+            36.85503417715102,
+            1.0471975511965912
+          ],
+          "distance_to_goal": 34.68595432331153,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        },
+        {
+          "step": 17,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1149.9516879941489,
+            -211.42377206830665,
+            36.85503417715102,
+            1.0471975511965912
+          ],
+          "distance_to_goal": 41.85414131674989,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        },
+        {
+          "step": 18,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1145.4516879941489,
+            -203.62954343424673,
+            36.85503417715102,
+            1.0471975511965912
+          ],
+          "distance_to_goal": 49.62280588001938,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        },
+        {
+          "step": 19,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1140.9516879941489,
+            -195.8353148001868,
+            36.85503417715102,
+            1.0471975511965912
+          ],
+          "distance_to_goal": 57.750121917184735,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4572.0,
+            "max_allocated_mb": 4474.9
+          }
+        }
+      ],
+      "predicted_action_ids": [
+        9,
+        3,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        3,
+        1,
+        9,
+        3,
+        3,
+        3,
+        9,
+        9,
+        9
+      ],
+      "final_pose": [
+        -1140.9516879941489,
+        -195.8353148001868,
+        36.85503417715102,
+        1.0471975511965912
+      ],
+      "traj_len": 97.82790388576475,
+      "pass_len": 129.00099999999986,
+      "distance_to_goal": 57.750121917184735,
+      "success": 0,
+      "osr": 0,
+      "spl": 0.0,
+      "image_error": null
+    }
+  ],
+  "final_gpu": {
+    "cuda_available": true,
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "allocated_mb": 4095.1,
+    "reserved_mb": 4572.0,
+    "max_allocated_mb": 4474.9
+  },
+  "nvidia_smi_after": {
+    "gpu_query": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "NVIDIA GeForce RTX 4060 Laptop GPU, 580.159.03, 8188, 4708, 100, 8.9",
+      "stderr": "",
+      "args": [
+        "nvidia-smi",
+        "--query-gpu=name,driver_version,memory.total,memory.used,utilization.gpu,compute_cap",
+        "--format=csv,noheader,nounits"
+      ]
+    },
+    "compute_apps_query": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "137557, /home/ruan/miniconda3/envs/openfly/bin/python, 4698",
+      "stderr": "",
+      "args": [
+        "nvidia-smi",
+        "--query-compute-apps=pid,process_name,used_memory",
+        "--format=csv,noheader,nounits"
+      ]
+    }
+  },
+  "pip_freeze_path": "demo_results/airsim_smoke/20260629_004035/pip_freeze.txt",
+  "run_command": "/home/ruan/miniconda3/envs/openfly/bin/python eval_airsim_4bit_smoke.py --env-name env_airsim_16 --limit 3 --max-steps 20 --save-frames --prepare-settings --startup-wait-sec 20 --connection-timeout-sec 60",
+  "warning_summary": {
+    "counts": {
+      "FutureWarning": 3,
+      "UserWarning": 392,
+      "deprecated": 1,
+      "Traceback": 0,
+      "Exception": 0,
+      "out_of_memory": 0,
+      "OOM": 0
+    },
+    "non_fatal_warnings_only": true
+  },
+  "contact_sheet_path": "demo_results/airsim_smoke/20260629_004035/contact_sheet.png"
+}

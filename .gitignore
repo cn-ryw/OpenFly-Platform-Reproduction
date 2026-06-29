@@ -1,0 +1,30 @@
+__pycache__/
+**/__pycache__/
+build/
+install/
+log/
+**.pcd
+uav_vln_data/
+env_seg_info/
+
+image/
+test/
+env_*/
+uav_vln_data/
+google/
+datagen/
+
+extlibs/
+build/
+install/
+src/projects/*
+
+extlibs/*
+
+# Local OpenFly reproduction artifacts: keep summaries/results in git, skip bulky frame dumps.
+demo_results/airsim_smoke/*/sample_*/
+demo_results/extended_experiments/*/video_frames/
+
+# Public archive excludes full extracted paper text.
+demo_results/paper/openfly_paper.txt
+demo_results/topic_review/autofly_paper.txt

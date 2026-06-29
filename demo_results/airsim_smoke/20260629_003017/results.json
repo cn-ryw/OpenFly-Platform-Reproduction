@@ -1,0 +1,476 @@
+{
+  "created_at": "2026-06-29T00:31:15",
+  "dry_run": false,
+  "repo_root": "/home/ruan/research/OpenFly-Platform",
+  "model": "IPEC-COMMUNITY/openfly-agent-7b",
+  "env_name": "env_airsim_16",
+  "eval_json": "configs/eval_test.json",
+  "unnorm_key": "vlnv1",
+  "vehicle_name": "drone_1",
+  "max_steps": 5,
+  "selected_samples": [
+    {
+      "sample_index": 0,
+      "image_path": "env_airsim_16/astar_data/medium_average/2025-1-9_13-18-9_387451659",
+      "prompt": "Proceed in a straight line toward the large brown building with rectangular windows . Then , slightly turn right and advance forward to the gray building adorned with numerous large rectangular windows . Finally , make a slight left and continue straight to the gray office building characterized by horizontal window blinds and described as mid-rise .",
+      "action_len": 16
+    }
+  ],
+  "preflight": {
+    "scene": {
+      "env_dir": "envs/airsim/env_airsim_16",
+      "env_dir_exists": true,
+      "start_script": "envs/airsim/env_airsim_16/LinuxNoEditor/start.sh",
+      "start_script_exists": true
+    },
+    "packages": {
+      "airsim": {
+        "ok": true
+      },
+      "msgpackrpc": {
+        "ok": true
+      }
+    },
+    "airsim_settings": {
+      "project_settings": "envs/airsim/AirSim/settings.json",
+      "project_exists": true,
+      "project_sha256": "b4a0afb9c31a2c2344041c6acd6155c3a04e34142eb4b5deffe736f674e1ef0f",
+      "user_settings": "/home/ruan/Documents/AirSim/settings.json",
+      "user_exists": true,
+      "user_sha256": "b4a0afb9c31a2c2344041c6acd6155c3a04e34142eb4b5deffe736f674e1ef0f",
+      "matches_project": true
+    },
+    "nvidia_smi": {
+      "gpu_query": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "NVIDIA GeForce RTX 4060 Laptop GPU, 580.159.03, 8188, 2, 0, 8.9",
+        "stderr": "",
+        "args": [
+          "nvidia-smi",
+          "--query-gpu=name,driver_version,memory.total,memory.used,utilization.gpu,compute_cap",
+          "--format=csv,noheader,nounits"
+        ]
+      },
+      "compute_apps_query": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "args": [
+          "nvidia-smi",
+          "--query-compute-apps=pid,process_name,used_memory",
+          "--format=csv,noheader,nounits"
+        ]
+      }
+    },
+    "selected_samples": [
+      {
+        "sample_index": 0,
+        "image_path": "env_airsim_16/astar_data/medium_average/2025-1-9_13-18-9_387451659",
+        "prompt": "Proceed in a straight line toward the large brown building with rectangular windows . Then , slightly turn right and advance forward to the gray building adorned with numerous large rectangular windows . Finally , make a slight left and continue straight to the gray office building characterized by horizontal window blinds and described as mid-rise .",
+        "action_len": 16
+      }
+    ]
+  },
+  "airsim_settings_preparation": {
+    "changed": false,
+    "backup_path": null,
+    "backup_copied_to_run_dir": null,
+    "before": {
+      "project_settings": "envs/airsim/AirSim/settings.json",
+      "project_exists": true,
+      "project_sha256": "b4a0afb9c31a2c2344041c6acd6155c3a04e34142eb4b5deffe736f674e1ef0f",
+      "user_settings": "/home/ruan/Documents/AirSim/settings.json",
+      "user_exists": true,
+      "user_sha256": "b4a0afb9c31a2c2344041c6acd6155c3a04e34142eb4b5deffe736f674e1ef0f",
+      "matches_project": true
+    },
+    "after": {
+      "project_settings": "envs/airsim/AirSim/settings.json",
+      "project_exists": true,
+      "project_sha256": "b4a0afb9c31a2c2344041c6acd6155c3a04e34142eb4b5deffe736f674e1ef0f",
+      "user_settings": "/home/ruan/Documents/AirSim/settings.json",
+      "user_exists": true,
+      "user_sha256": "b4a0afb9c31a2c2344041c6acd6155c3a04e34142eb4b5deffe736f674e1ef0f",
+      "matches_project": true
+    }
+  },
+  "results": [
+    {
+      "sample_index": 0,
+      "image_path": "env_airsim_16/astar_data/medium_average/2025-1-9_13-18-9_387451659",
+      "prompt": "Proceed in a straight line toward the large brown building with rectangular windows . Then , slightly turn right and advance forward to the gray building adorned with numerous large rectangular windows . Finally , make a slight left and continue straight to the gray office building characterized by horizontal window blinds and described as mid-rise .",
+      "ground_truth_action": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        3,
+        9,
+        1,
+        2,
+        9,
+        9,
+        9,
+        9,
+        0
+      ],
+      "ground_truth_action_len": 16,
+      "start_position": [
+        -1081.489625285631,
+        -209.81771694551878,
+        30.45824585413169
+      ],
+      "end_position": [
+        -1075.489625285631,
+        -106.42541210010552,
+        30.45824585413169
+      ],
+      "start_yaw": 1.5707963267948966,
+      "pitch": 0.0,
+      "max_steps": 5,
+      "steps_run": 5,
+      "action_steps": [
+        {
+          "step": 0,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1081.489625285631,
+            -200.81771694551878,
+            30.45824585413169,
+            1.5707963267948966
+          ],
+          "distance_to_goal": 94.58280612262162,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 1,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1081.489625285631,
+            -191.81771694551878,
+            30.45824585413169,
+            1.5707963267948966
+          ],
+          "distance_to_goal": 85.60283714230499,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 2,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1081.489625285631,
+            -182.81771694551878,
+            30.45824585413169,
+            1.5707963267948966
+          ],
+          "distance_to_goal": 76.62756840455366,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 3,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1081.489625285631,
+            -173.81771694551878,
+            30.45824585413169,
+            1.5707963267948966
+          ],
+          "distance_to_goal": 67.65887046335546,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        },
+        {
+          "step": 4,
+          "raw_action": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded_action": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9,
+          "nearest_template": {
+            "action_id": 9,
+            "l2_distance": 0.04522573566537551,
+            "all_l2": {
+              "0": 9.037725197178519,
+              "1": 5.982497861368955,
+              "2": 17.458580852038533,
+              "3": 17.45858085203853,
+              "4": 9.202412635192086,
+              "5": 9.202412635192086,
+              "6": 10.280291742374967,
+              "7": 10.280291742374967,
+              "8": 2.982643628431881,
+              "9": 0.04522573566537551
+            }
+          },
+          "pose_after_action": [
+            -1081.489625285631,
+            -164.81771694551878,
+            30.45824585413169,
+            1.5707963267948966
+          ],
+          "distance_to_goal": 58.699755239350644,
+          "gpu": {
+            "cuda_available": true,
+            "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "allocated_mb": 4095.1,
+            "reserved_mb": 4532.0,
+            "max_allocated_mb": 4435.9
+          }
+        }
+      ],
+      "predicted_action_ids": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "final_pose": [
+        -1081.489625285631,
+        -164.81771694551878,
+        30.45824585413169,
+        1.5707963267948966
+      ],
+      "traj_len": 103.56625271412916,
+      "pass_len": 45.001,
+      "distance_to_goal": 58.699755239350644,
+      "success": 0,
+      "osr": 0,
+      "spl": 0.0,
+      "image_error": null
+    }
+  ],
+  "final_gpu": {
+    "cuda_available": true,
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "allocated_mb": 4095.1,
+    "reserved_mb": 4532.0,
+    "max_allocated_mb": 4435.9
+  },
+  "nvidia_smi_after": {
+    "gpu_query": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "NVIDIA GeForce RTX 4060 Laptop GPU, 580.159.03, 8188, 4668, 100, 8.9",
+      "stderr": "",
+      "args": [
+        "nvidia-smi",
+        "--query-gpu=name,driver_version,memory.total,memory.used,utilization.gpu,compute_cap",
+        "--format=csv,noheader,nounits"
+      ]
+    },
+    "compute_apps_query": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "128726, /home/ruan/miniconda3/envs/openfly/bin/python, 4658",
+      "stderr": "",
+      "args": [
+        "nvidia-smi",
+        "--query-compute-apps=pid,process_name,used_memory",
+        "--format=csv,noheader,nounits"
+      ]
+    }
+  },
+  "pip_freeze_path": "demo_results/airsim_smoke/20260629_003017/pip_freeze.txt",
+  "run_command": "/home/ruan/miniconda3/envs/openfly/bin/python eval_airsim_4bit_smoke.py --env-name env_airsim_16 --limit 1 --max-steps 5 --save-frames --prepare-settings --startup-wait-sec 20 --connection-timeout-sec 60",
+  "warning_summary": {
+    "counts": {
+      "FutureWarning": 3,
+      "UserWarning": 392,
+      "deprecated": 4,
+      "Traceback": 0,
+      "Exception": 0,
+      "out_of_memory": 0,
+      "OOM": 0
+    },
+    "non_fatal_warnings_only": true
+  }
+}

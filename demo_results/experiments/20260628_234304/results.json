@@ -1,0 +1,898 @@
+{
+  "created_at": "2026-06-28T23:43:30",
+  "repo_root": "/home/ruan/research/OpenFly-Platform",
+  "model": "IPEC-COMMUNITY/openfly-agent-7b",
+  "model_revision": "21dcce235f1f2d40fc23c76998051abc5434cc99",
+  "unnorm_key": "vln_norm",
+  "do_sample": false,
+  "git": {
+    "commit": "c075075497a7122bad82f5b76b9be926ad5a81b3",
+    "branch": "main",
+    "dirty": true,
+    "status_short": [
+      "?? CLAUDE.md",
+      "?? demo_imgs/",
+      "?? demo_results/",
+      "?? demo_video.mp4",
+      "?? generate_reproduction_audit.py",
+      "?? infer_openfly_4bit.py",
+      "?? openfly_ann/",
+      "?? run_openfly_experiments.py"
+    ],
+    "remote": [
+      "origin\thttps://github.com/SHAILAB-IPEC/OpenFly-Platform.git (fetch)",
+      "origin\thttps://github.com/SHAILAB-IPEC/OpenFly-Platform.git (push)"
+    ]
+  },
+  "environment": {
+    "python": "3.10.20",
+    "python_executable": "/home/ruan/miniconda3/envs/openfly/bin/python",
+    "platform": "Linux-6.8.0-85-generic-x86_64-with-glibc2.35",
+    "torch": "2.12.1+cu126",
+    "cuda_available": true,
+    "cuda_device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "cuda_capability": [
+      8,
+      9
+    ],
+    "transformers": "4.47.1",
+    "tokenizers": "0.21.4",
+    "timm": "0.9.16",
+    "bitsandbytes": "0.49.2",
+    "hf_hub_enable_hf_transfer": "1",
+    "pytorch_cuda_alloc_conf": "expandable_segments:True"
+  },
+  "input_images": {
+    "hist_1": "demo_imgs/hist_1.png",
+    "hist_2": "demo_imgs/hist_2.png",
+    "current": "demo_imgs/current.png"
+  },
+  "input_image_hashes": {
+    "hist_1": {
+      "path": "demo_imgs/hist_1.png",
+      "sha256": "151b4d027ff8997ad56a316aaa05307a0bba60fdb38136a1740a6e42370e383d",
+      "bytes": 3754808
+    },
+    "hist_2": {
+      "path": "demo_imgs/hist_2.png",
+      "sha256": "320819abce4045a3404d15e6cbe9930302f4ff3a33be2a79b0b836a76ba32cea",
+      "bytes": 3877442
+    },
+    "current": {
+      "path": "demo_imgs/current.png",
+      "sha256": "379150b2c4b94cc0b2265d0794b4e7356a557fe86dc078e6d190cadcb6ff7692",
+      "bytes": 3548683
+    }
+  },
+  "script_hashes": {
+    "single_inference": {
+      "path": "infer_openfly_4bit.py",
+      "sha256": "796459e46a3377609ea7e404fc18695f0a985ac29e09d7eaad22ffd5c319e02b",
+      "bytes": 4117
+    },
+    "experiment_runner": {
+      "path": "run_openfly_experiments.py",
+      "sha256": "f563e240e3b19b62de17175d6884e474f37c76b331b5af450aeb34b4f55beff2",
+      "bytes": 23628
+    }
+  },
+  "nvidia_smi_before": {
+    "gpu_query": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "NVIDIA GeForce RTX 4060 Laptop GPU, 580.159.03, 8188, 4, 0, 8.9",
+      "stderr": "",
+      "args": [
+        "nvidia-smi",
+        "--query-gpu=name,driver_version,memory.total,memory.used,utilization.gpu,compute_cap",
+        "--format=csv,noheader,nounits"
+      ]
+    },
+    "compute_apps_query": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "args": [
+        "nvidia-smi",
+        "--query-compute-apps=pid,process_name,used_memory",
+        "--format=csv,noheader,nounits"
+      ]
+    }
+  },
+  "nvidia_smi_after": {
+    "gpu_query": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "NVIDIA GeForce RTX 4060 Laptop GPU, 580.159.03, 8188, 4588, 100, 8.9",
+      "stderr": "",
+      "args": [
+        "nvidia-smi",
+        "--query-gpu=name,driver_version,memory.total,memory.used,utilization.gpu,compute_cap",
+        "--format=csv,noheader,nounits"
+      ]
+    },
+    "compute_apps_query": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "110924, /home/ruan/miniconda3/envs/openfly/bin/python, 4578",
+      "stderr": "",
+      "args": [
+        "nvidia-smi",
+        "--query-compute-apps=pid,process_name,used_memory",
+        "--format=csv,noheader,nounits"
+      ]
+    }
+  },
+  "pip_freeze_path": "demo_results/experiments/20260628_234304/pip_freeze.txt",
+  "run_command": "/home/ruan/miniconda3/envs/openfly/bin/python run_openfly_experiments.py",
+  "warning_summary": {
+    "counts": {
+      "FutureWarning": 3,
+      "UserWarning": 392,
+      "dependency_version_warning": 1,
+      "deprecated": 1,
+      "no_op": 392,
+      "Traceback": 0,
+      "Exception": 0,
+      "out_of_memory": 0,
+      "OOM": 0
+    },
+    "non_fatal_warnings_only": true,
+    "notes": [
+      "The timm/meta tensor 'no-op' warnings were observed during vision-backbone checkpoint loading.",
+      "The run is considered successful only when no Traceback/Exception/OOM appears and all actions are recorded."
+    ]
+  },
+  "action_template_note": "Nearest template is only an explanatory approximation; model output is an 8D continuous action.",
+  "action_templates": {
+    "0_stop": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "1_move_forward_3": [
+      0,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "2_turn_left": [
+      0,
+      0,
+      15,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "3_turn_right": [
+      0,
+      0,
+      0,
+      15,
+      0,
+      0,
+      0,
+      0
+    ],
+    "4_go_up": [
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    "5_go_down": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0
+    ],
+    "6_move_left": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5,
+      0
+    ],
+    "7_move_right": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5
+    ],
+    "8_move_forward_6": [
+      0,
+      6,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "9_move_forward_9": [
+      0,
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "results": [
+    {
+      "name": "baseline_1",
+      "group": "baseline",
+      "note": "原始三帧顺序和原 prompt。",
+      "prompt": "Fly forward carefully, avoid obstacles, and move towards the open area.",
+      "image_order": [
+        "hist_1",
+        "hist_2",
+        "current"
+      ],
+      "image_paths": [
+        "demo_imgs/hist_1.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/current.png"
+      ],
+      "action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "0_stop",
+        "l2_distance": 0.0,
+        "l1_distance": 0.0,
+        "template_action": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 0.0,
+        "l2": 0.0,
+        "max_abs": 0.0
+      },
+      "elapsed_sec": 1.28,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4088.7,
+        "reserved_mb": 4210.0,
+        "max_allocated_mb": 4145.3
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      }
+    },
+    {
+      "name": "baseline_2",
+      "group": "baseline",
+      "note": "完全相同输入复跑，检查 do_sample=False 的稳定性。",
+      "prompt": "Fly forward carefully, avoid obstacles, and move towards the open area.",
+      "image_order": [
+        "hist_1",
+        "hist_2",
+        "current"
+      ],
+      "image_paths": [
+        "demo_imgs/hist_1.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/current.png"
+      ],
+      "action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "0_stop",
+        "l2_distance": 0.0,
+        "l1_distance": 0.0,
+        "template_action": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 0.0,
+        "l2": 0.0,
+        "max_abs": 0.0
+      },
+      "elapsed_sec": 0.82,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      }
+    },
+    {
+      "name": "forward_careful",
+      "group": "prompt",
+      "note": "forward prompt 对照项。",
+      "prompt": "Fly forward carefully, avoid obstacles, and move towards the open area.",
+      "image_order": [
+        "hist_1",
+        "hist_2",
+        "current"
+      ],
+      "image_paths": [
+        "demo_imgs/hist_1.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/current.png"
+      ],
+      "action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "0_stop",
+        "l2_distance": 0.0,
+        "l1_distance": 0.0,
+        "template_action": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 0.0,
+        "l2": 0.0,
+        "max_abs": 0.0
+      },
+      "elapsed_sec": 0.831,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      }
+    },
+    {
+      "name": "turn_left",
+      "group": "prompt",
+      "note": "只改变导航指令为左转。",
+      "prompt": "Turn left carefully and move toward the open area.",
+      "image_order": [
+        "hist_1",
+        "hist_2",
+        "current"
+      ],
+      "image_paths": [
+        "demo_imgs/hist_1.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/current.png"
+      ],
+      "action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "8_move_forward_6",
+        "l2_distance": 1.0,
+        "l1_distance": 1.0,
+        "template_action": [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 5.976470588235294,
+        "l2": 5.079023358637519,
+        "max_abs": 4.980392156862745
+      },
+      "elapsed_sec": 0.814,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      }
+    },
+    {
+      "name": "turn_right",
+      "group": "prompt",
+      "note": "只改变导航指令为右转。",
+      "prompt": "Turn right carefully and avoid obstacles.",
+      "image_order": [
+        "hist_1",
+        "hist_2",
+        "current"
+      ],
+      "image_paths": [
+        "demo_imgs/hist_1.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/current.png"
+      ],
+      "action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.996078431372549,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "4_go_up",
+        "l2_distance": 0.0,
+        "l1_distance": 0.0,
+        "template_action": [
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 2.988235294117647,
+        "l2": 2.227299083470379,
+        "max_abs": 1.992156862745098
+      },
+      "elapsed_sec": 0.814,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      }
+    },
+    {
+      "name": "hover_stop",
+      "group": "prompt",
+      "note": "只改变导航指令为停止/悬停。",
+      "prompt": "Stop and hover carefully, avoid moving forward.",
+      "image_order": [
+        "hist_1",
+        "hist_2",
+        "current"
+      ],
+      "image_paths": [
+        "demo_imgs/hist_1.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/current.png"
+      ],
+      "action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "0_stop",
+        "l2_distance": 0.0,
+        "l1_distance": 0.0,
+        "template_action": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 0.0,
+        "l2": 0.0,
+        "max_abs": 0.0
+      },
+      "elapsed_sec": 0.808,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      }
+    },
+    {
+      "name": "frames_normal",
+      "group": "frames",
+      "note": "帧顺序正常的帧序对照项。",
+      "prompt": "Fly forward carefully, avoid obstacles, and move towards the open area.",
+      "image_order": [
+        "hist_1",
+        "hist_2",
+        "current"
+      ],
+      "image_paths": [
+        "demo_imgs/hist_1.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/current.png"
+      ],
+      "action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "0_stop",
+        "l2_distance": 0.0,
+        "l1_distance": 0.0,
+        "template_action": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 0.0,
+        "l2": 0.0,
+        "max_abs": 0.0
+      },
+      "elapsed_sec": 0.812,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      }
+    },
+    {
+      "name": "frames_reversed",
+      "group": "frames",
+      "note": "反转历史和当前帧，观察时序敏感性。",
+      "prompt": "Fly forward carefully, avoid obstacles, and move towards the open area.",
+      "image_order": [
+        "current",
+        "hist_2",
+        "hist_1"
+      ],
+      "image_paths": [
+        "demo_imgs/current.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/hist_1.png"
+      ],
+      "action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "8_move_forward_6",
+        "l2_distance": 1.0,
+        "l1_distance": 1.0,
+        "template_action": [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 5.976470588235294,
+        "l2": 5.079023358637519,
+        "max_abs": 4.980392156862745
+      },
+      "elapsed_sec": 0.802,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      }
+    },
+    {
+      "name": "frames_static_current",
+      "group": "frames",
+      "note": "三帧都使用 current，观察历史信息被抹掉后的变化。",
+      "prompt": "Fly forward carefully, avoid obstacles, and move towards the open area.",
+      "image_order": [
+        "current",
+        "current",
+        "current"
+      ],
+      "image_paths": [
+        "demo_imgs/current.png",
+        "demo_imgs/current.png",
+        "demo_imgs/current.png"
+      ],
+      "action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "0_stop",
+        "l2_distance": 0.0,
+        "l1_distance": 0.0,
+        "template_action": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 0.0,
+        "l2": 0.0,
+        "max_abs": 0.0
+      },
+      "elapsed_sec": 0.797,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      }
+    }
+  ],
+  "final_gpu": {
+    "cuda_available": true,
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "allocated_mb": 4095.1,
+    "reserved_mb": 4452.0,
+    "max_allocated_mb": 4383.9
+  }
+}

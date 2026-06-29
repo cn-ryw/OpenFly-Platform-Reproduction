@@ -1,0 +1,2356 @@
+{
+  "created_at": "2026-06-28T23:55:46",
+  "experiment_type": "extended_official_prompt_and_video_frames",
+  "repo_root": "/home/ruan/research/OpenFly-Platform",
+  "model": "IPEC-COMMUNITY/openfly-agent-7b",
+  "model_revision": "21dcce235f1f2d40fc23c76998051abc5434cc99",
+  "unnorm_key": "vln_norm",
+  "do_sample": false,
+  "git": {
+    "commit": "c075075497a7122bad82f5b76b9be926ad5a81b3",
+    "branch": "main",
+    "dirty": true,
+    "status_short": [
+      "?? CLAUDE.md",
+      "?? demo_imgs/",
+      "?? demo_results/",
+      "?? demo_video.mp4",
+      "?? generate_reproduction_audit.py",
+      "?? infer_openfly_4bit.py",
+      "?? openfly_ann/",
+      "?? run_openfly_experiments.py",
+      "?? run_openfly_extended_experiments.py"
+    ],
+    "remote": [
+      "origin\thttps://github.com/SHAILAB-IPEC/OpenFly-Platform.git (fetch)",
+      "origin\thttps://github.com/SHAILAB-IPEC/OpenFly-Platform.git (push)"
+    ]
+  },
+  "environment": {
+    "python": "3.10.20",
+    "python_executable": "/home/ruan/miniconda3/envs/openfly/bin/python",
+    "platform": "Linux-6.8.0-85-generic-x86_64-with-glibc2.35",
+    "torch": "2.12.1+cu126",
+    "cuda_available": true,
+    "cuda_device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "cuda_capability": [
+      8,
+      9
+    ],
+    "transformers": "4.47.1",
+    "tokenizers": "0.21.4",
+    "timm": "0.9.16",
+    "bitsandbytes": "0.49.2",
+    "hf_hub_enable_hf_transfer": "1",
+    "pytorch_cuda_alloc_conf": "expandable_segments:True"
+  },
+  "base_input_images": {
+    "hist_1": "demo_imgs/hist_1.png",
+    "hist_2": "demo_imgs/hist_2.png",
+    "current": "demo_imgs/current.png"
+  },
+  "base_input_image_hashes": {
+    "hist_1": {
+      "path": "demo_imgs/hist_1.png",
+      "sha256": "151b4d027ff8997ad56a316aaa05307a0bba60fdb38136a1740a6e42370e383d",
+      "bytes": 3754808
+    },
+    "hist_2": {
+      "path": "demo_imgs/hist_2.png",
+      "sha256": "320819abce4045a3404d15e6cbe9930302f4ff3a33be2a79b0b836a76ba32cea",
+      "bytes": 3877442
+    },
+    "current": {
+      "path": "demo_imgs/current.png",
+      "sha256": "379150b2c4b94cc0b2265d0794b4e7356a557fe86dc078e6d190cadcb6ff7692",
+      "bytes": 3548683
+    }
+  },
+  "annotation_paths": {
+    "seen": "openfly_ann/Annotation/seen.json",
+    "unseen": "openfly_ann/Annotation/unseen.json"
+  },
+  "video_metadata": {
+    "path": "demo_video.mp4",
+    "sha256": "636f2344c5a0127c576e426e91a15961b1f2c5b80557e11bf04df9ca42d86d7c",
+    "fps": 30.0,
+    "frame_count": 192,
+    "width": 1920,
+    "height": 1080,
+    "duration_sec": 6.4
+  },
+  "video_frame_groups": [
+    {
+      "group_index": 0,
+      "center_time_sec": 0.8,
+      "center_frame": 24,
+      "frame_indices": [
+        22,
+        23,
+        24
+      ],
+      "image_paths": [
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_00_0.8s/hist_1_frame_0022.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_00_0.8s/hist_2_frame_0023.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_00_0.8s/current_frame_0024.png"
+      ],
+      "image_hashes": {
+        "frame_22": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_00_0.8s/hist_1_frame_0022.png",
+          "sha256": "273f7d37b7f625a2cf5936636b983f98fafb47f751476c99d0d9ac39085d1878",
+          "bytes": 2540624
+        },
+        "frame_23": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_00_0.8s/hist_2_frame_0023.png",
+          "sha256": "f29308a46e08e71b574fcc4bab313a0046c2ec12d96e4ace7951446c7a64c354",
+          "bytes": 2515174
+        },
+        "frame_24": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_00_0.8s/current_frame_0024.png",
+          "sha256": "239a981c6b41e86f0511bc61b6cef93a2b64f57a05fd7e3a40ffa58b1803b9bb",
+          "bytes": 2538274
+        }
+      }
+    },
+    {
+      "group_index": 1,
+      "center_time_sec": 2.0,
+      "center_frame": 60,
+      "frame_indices": [
+        58,
+        59,
+        60
+      ],
+      "image_paths": [
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_01_2.0s/hist_1_frame_0058.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_01_2.0s/hist_2_frame_0059.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_01_2.0s/current_frame_0060.png"
+      ],
+      "image_hashes": {
+        "frame_58": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_01_2.0s/hist_1_frame_0058.png",
+          "sha256": "0a40cafb54def7c59ebfc1a7a5cc0c121b69138b42ae2a7c70ddb2df1ec0c682",
+          "bytes": 2540067
+        },
+        "frame_59": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_01_2.0s/hist_2_frame_0059.png",
+          "sha256": "ab3185ee0969c65f7c24d35a5872420892de34db59051a56139d72adb3dff37c",
+          "bytes": 2525090
+        },
+        "frame_60": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_01_2.0s/current_frame_0060.png",
+          "sha256": "57e6972fa461591d44d7d679c060452b0d6379fd99b47fc32ff6e69672c31736",
+          "bytes": 2267093
+        }
+      }
+    },
+    {
+      "group_index": 2,
+      "center_time_sec": 3.2,
+      "center_frame": 96,
+      "frame_indices": [
+        94,
+        95,
+        96
+      ],
+      "image_paths": [
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_02_3.2s/hist_1_frame_0094.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_02_3.2s/hist_2_frame_0095.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_02_3.2s/current_frame_0096.png"
+      ],
+      "image_hashes": {
+        "frame_94": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_02_3.2s/hist_1_frame_0094.png",
+          "sha256": "23835aef7a9be4cf874c42914ded2aa15adbac187ac4b4d03fcf54a5d6b0b125",
+          "bytes": 2620347
+        },
+        "frame_95": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_02_3.2s/hist_2_frame_0095.png",
+          "sha256": "5871334131a678c49d94ff9498a465cde20707f44f302772eac1759eead58f5d",
+          "bytes": 2634635
+        },
+        "frame_96": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_02_3.2s/current_frame_0096.png",
+          "sha256": "eb6a8dde3c13ca8dc0e931195c9204fae90ef04ba7eeb4921c9f699a1597ce18",
+          "bytes": 2649866
+        }
+      }
+    },
+    {
+      "group_index": 3,
+      "center_time_sec": 4.4,
+      "center_frame": 132,
+      "frame_indices": [
+        130,
+        131,
+        132
+      ],
+      "image_paths": [
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_03_4.4s/hist_1_frame_0130.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_03_4.4s/hist_2_frame_0131.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_03_4.4s/current_frame_0132.png"
+      ],
+      "image_hashes": {
+        "frame_130": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_03_4.4s/hist_1_frame_0130.png",
+          "sha256": "1993109c168b3879413400f3605830889f5452f0a6ac096574c661c129b8f6f9",
+          "bytes": 2418942
+        },
+        "frame_131": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_03_4.4s/hist_2_frame_0131.png",
+          "sha256": "a2c0dc5f08d58bdf6be9a25c168fa2cc2c80ff7a87feace06433a24f025036e6",
+          "bytes": 2405077
+        },
+        "frame_132": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_03_4.4s/current_frame_0132.png",
+          "sha256": "321a20c1db39563d40f03e056dcaaed4738ac71cf2ccf18e8b26843d809d4269",
+          "bytes": 2387558
+        }
+      }
+    },
+    {
+      "group_index": 4,
+      "center_time_sec": 5.6,
+      "center_frame": 168,
+      "frame_indices": [
+        166,
+        167,
+        168
+      ],
+      "image_paths": [
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_04_5.6s/hist_1_frame_0166.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_04_5.6s/hist_2_frame_0167.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_04_5.6s/current_frame_0168.png"
+      ],
+      "image_hashes": {
+        "frame_166": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_04_5.6s/hist_1_frame_0166.png",
+          "sha256": "05a340f6e1908aac4500f2876c1d778e6d8ad0b0faa251f85d13ab3c57a6d84f",
+          "bytes": 2393097
+        },
+        "frame_167": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_04_5.6s/hist_2_frame_0167.png",
+          "sha256": "7c4558279b322bb276a1037747f0373a5f5a0b8851666b0048cf41ed6ec2d6c2",
+          "bytes": 2397222
+        },
+        "frame_168": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_04_5.6s/current_frame_0168.png",
+          "sha256": "a5ffe31984045ee8daad2da1b0e8233c9905c3c5fe44322814d5b394ee2dca19",
+          "bytes": 2397049
+        }
+      }
+    }
+  ],
+  "contact_sheet_path": "demo_results/extended_experiments/20260628_235508/video_frame_contact_sheet.png",
+  "script_hashes": {
+    "single_inference": {
+      "path": "infer_openfly_4bit.py",
+      "sha256": "796459e46a3377609ea7e404fc18695f0a985ac29e09d7eaad22ffd5c319e02b",
+      "bytes": 4117
+    },
+    "experiment_runner": {
+      "path": "run_openfly_experiments.py",
+      "sha256": "f563e240e3b19b62de17175d6884e474f37c76b331b5af450aeb34b4f55beff2",
+      "bytes": 23628
+    },
+    "extended_experiment_runner": {
+      "path": "run_openfly_extended_experiments.py",
+      "sha256": "26bdc8f5165b49190795210828d885aefba1e66432674e601aa9563be7874836",
+      "bytes": 20869
+    }
+  },
+  "nvidia_smi_before": {
+    "gpu_query": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "NVIDIA GeForce RTX 4060 Laptop GPU, 580.159.03, 8188, 4, 0, 8.9",
+      "stderr": "",
+      "args": [
+        "nvidia-smi",
+        "--query-gpu=name,driver_version,memory.total,memory.used,utilization.gpu,compute_cap",
+        "--format=csv,noheader,nounits"
+      ]
+    },
+    "compute_apps_query": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "args": [
+        "nvidia-smi",
+        "--query-compute-apps=pid,process_name,used_memory",
+        "--format=csv,noheader,nounits"
+      ]
+    }
+  },
+  "nvidia_smi_after": {
+    "gpu_query": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "NVIDIA GeForce RTX 4060 Laptop GPU, 580.159.03, 8188, 4688, 0, 8.9",
+      "stderr": "",
+      "args": [
+        "nvidia-smi",
+        "--query-gpu=name,driver_version,memory.total,memory.used,utilization.gpu,compute_cap",
+        "--format=csv,noheader,nounits"
+      ]
+    },
+    "compute_apps_query": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "115144, /home/ruan/miniconda3/envs/openfly/bin/python, 4678",
+      "stderr": "",
+      "args": [
+        "nvidia-smi",
+        "--query-compute-apps=pid,process_name,used_memory",
+        "--format=csv,noheader,nounits"
+      ]
+    }
+  },
+  "pip_freeze_path": "demo_results/extended_experiments/20260628_235508/pip_freeze.txt",
+  "run_command": "/home/ruan/miniconda3/envs/openfly/bin/python run_openfly_extended_experiments.py",
+  "warning_summary": {
+    "counts": {
+      "FutureWarning": 3,
+      "UserWarning": 392,
+      "dependency_version_warning": 1,
+      "deprecated": 1,
+      "no_op": 392,
+      "Traceback": 0,
+      "Exception": 0,
+      "out_of_memory": 0,
+      "OOM": 0
+    },
+    "non_fatal_warnings_only": true,
+    "notes": [
+      "The timm/meta tensor 'no-op' warnings were observed during vision-backbone checkpoint loading.",
+      "The run is considered successful only when no Traceback/Exception/OOM appears and all actions are recorded."
+    ]
+  },
+  "group_counts": {
+    "baseline": 2,
+    "official_prompt": 10,
+    "video_frames": 5
+  },
+  "action_template_note": "Nearest template is only an explanatory approximation; model output is an 8D continuous action.",
+  "action_templates": {
+    "0_stop": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "1_move_forward_3": [
+      0,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "2_turn_left": [
+      0,
+      0,
+      15,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "3_turn_right": [
+      0,
+      0,
+      0,
+      15,
+      0,
+      0,
+      0,
+      0
+    ],
+    "4_go_up": [
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    "5_go_down": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0
+    ],
+    "6_move_left": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5,
+      0
+    ],
+    "7_move_right": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5
+    ],
+    "8_move_forward_6": [
+      0,
+      6,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "9_move_forward_9": [
+      0,
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "results": [
+    {
+      "name": "baseline_1",
+      "group": "baseline",
+      "note": "原始三帧顺序和 baseline prompt。",
+      "prompt": "Fly forward carefully, avoid obstacles, and move towards the open area.",
+      "prompt_source": {
+        "type": "manual_baseline"
+      },
+      "frame_source": {
+        "type": "demo_imgs",
+        "image_aliases": [
+          "hist_1",
+          "hist_2",
+          "current"
+        ]
+      },
+      "image_paths": [
+        "demo_imgs/hist_1.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/current.png"
+      ],
+      "image_hashes": {
+        "image_0": {
+          "path": "demo_imgs/hist_1.png",
+          "sha256": "151b4d027ff8997ad56a316aaa05307a0bba60fdb38136a1740a6e42370e383d",
+          "bytes": 3754808
+        },
+        "image_1": {
+          "path": "demo_imgs/hist_2.png",
+          "sha256": "320819abce4045a3404d15e6cbe9930302f4ff3a33be2a79b0b836a76ba32cea",
+          "bytes": 3877442
+        },
+        "image_2": {
+          "path": "demo_imgs/current.png",
+          "sha256": "379150b2c4b94cc0b2265d0794b4e7356a557fe86dc078e6d190cadcb6ff7692",
+          "bytes": 3548683
+        }
+      },
+      "action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "0_stop",
+        "l2_distance": 0.0,
+        "l1_distance": 0.0,
+        "template_action": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 0.0,
+        "l2": 0.0,
+        "max_abs": 0.0
+      },
+      "elapsed_sec": 1.217,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4088.7,
+        "reserved_mb": 4210.0,
+        "max_allocated_mb": 4145.3
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      }
+    },
+    {
+      "name": "baseline_2",
+      "group": "baseline",
+      "note": "完全相同输入复跑，检查 do_sample=False 的稳定性。",
+      "prompt": "Fly forward carefully, avoid obstacles, and move towards the open area.",
+      "prompt_source": {
+        "type": "manual_baseline"
+      },
+      "frame_source": {
+        "type": "demo_imgs",
+        "image_aliases": [
+          "hist_1",
+          "hist_2",
+          "current"
+        ]
+      },
+      "image_paths": [
+        "demo_imgs/hist_1.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/current.png"
+      ],
+      "image_hashes": {
+        "image_0": {
+          "path": "demo_imgs/hist_1.png",
+          "sha256": "151b4d027ff8997ad56a316aaa05307a0bba60fdb38136a1740a6e42370e383d",
+          "bytes": 3754808
+        },
+        "image_1": {
+          "path": "demo_imgs/hist_2.png",
+          "sha256": "320819abce4045a3404d15e6cbe9930302f4ff3a33be2a79b0b836a76ba32cea",
+          "bytes": 3877442
+        },
+        "image_2": {
+          "path": "demo_imgs/current.png",
+          "sha256": "379150b2c4b94cc0b2265d0794b4e7356a557fe86dc078e6d190cadcb6ff7692",
+          "bytes": 3548683
+        }
+      },
+      "action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "0_stop",
+        "l2_distance": 0.0,
+        "l1_distance": 0.0,
+        "template_action": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 0.0,
+        "l2": 0.0,
+        "max_abs": 0.0
+      },
+      "elapsed_sec": 0.842,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      }
+    },
+    {
+      "name": "official_seen_0",
+      "group": "official_prompt",
+      "note": "官方 annotation 风格导航指令；图像仍使用自有三帧，因此只验证语言分布敏感性。",
+      "prompt": "Proceed to the large , gray , rectangular , multi - story building , then slightly turn right and continue straight to the medium , grey building with rectangular windows and a flat roof . Next , turn left towards the light beige structure characterized by its large rectangular multi - story design and numerous windows . Finally , move ahead to the light gray , rectangular building with a flat roof and multiple windows , medium in size and similar to the surrounding residential buildings .",
+      "prompt_source": {
+        "split": "seen",
+        "index": 0,
+        "annotation_path": "openfly_ann/Annotation/seen.json",
+        "annotation_image_path": "env_gs_ecust/astar_data/long/2025-1-8_19-16-3_733327814",
+        "prompt": "Proceed to the large , gray , rectangular , multi - story building , then slightly turn right and continue straight to the medium , grey building with rectangular windows and a flat roof . Next , turn left towards the light beige structure characterized by its large rectangular multi - story design and numerous windows . Finally , move ahead to the light gray , rectangular building with a flat roof and multiple windows , medium in size and similar to the surrounding residential buildings .",
+        "action_sequence": [
+          9,
+          9,
+          9,
+          8,
+          3,
+          9,
+          9,
+          9,
+          9,
+          2,
+          2,
+          2,
+          2,
+          2,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          0
+        ],
+        "action_sequence_len": 22
+      },
+      "frame_source": {
+        "type": "demo_imgs",
+        "image_aliases": [
+          "hist_1",
+          "hist_2",
+          "current"
+        ]
+      },
+      "image_paths": [
+        "demo_imgs/hist_1.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/current.png"
+      ],
+      "image_hashes": {
+        "image_0": {
+          "path": "demo_imgs/hist_1.png",
+          "sha256": "151b4d027ff8997ad56a316aaa05307a0bba60fdb38136a1740a6e42370e383d",
+          "bytes": 3754808
+        },
+        "image_1": {
+          "path": "demo_imgs/hist_2.png",
+          "sha256": "320819abce4045a3404d15e6cbe9930302f4ff3a33be2a79b0b836a76ba32cea",
+          "bytes": 3877442
+        },
+        "image_2": {
+          "path": "demo_imgs/current.png",
+          "sha256": "379150b2c4b94cc0b2265d0794b4e7356a557fe86dc078e6d190cadcb6ff7692",
+          "bytes": 3548683
+        }
+      },
+      "action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "8_move_forward_6",
+        "l2_distance": 1.4142135623730951,
+        "l1_distance": 2.0,
+        "template_action": [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 6.972549019607843,
+        "l2": 5.175775354382292,
+        "max_abs": 4.980392156862745
+      },
+      "elapsed_sec": 0.809,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4452.0,
+        "max_allocated_mb": 4383.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4463.9
+      }
+    },
+    {
+      "name": "official_seen_1",
+      "group": "official_prompt",
+      "note": "官方 annotation 风格导航指令；图像仍使用自有三帧，因此只验证语言分布敏感性。",
+      "prompt": "Move forward into a green - brown park with pathways and small green areas of medium size , then shift right to a large building characterized by modern architecture with white and glass features and expansive windows . Next , advance forward to another large building with a white color and a rectangular layout featuring an inner courtyard . Slightly veering left , proceed directly ahead to a small U - shaped building distinguished by its red and white coloring amidst larger surrounding structures .",
+      "prompt_source": {
+        "split": "seen",
+        "index": 1,
+        "annotation_path": "openfly_ann/Annotation/seen.json",
+        "annotation_image_path": "env_gs_ecust/astar_data/long/2025-1-8_14-17-30_1597322404",
+        "prompt": "Move forward into a green - brown park with pathways and small green areas of medium size , then shift right to a large building characterized by modern architecture with white and glass features and expansive windows . Next , advance forward to another large building with a white color and a rectangular layout featuring an inner courtyard . Slightly veering left , proceed directly ahead to a small U - shaped building distinguished by its red and white coloring amidst larger surrounding structures .",
+        "action_sequence": [
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          3,
+          3,
+          3,
+          3,
+          9,
+          9,
+          9,
+          9,
+          9,
+          2,
+          9,
+          9,
+          9,
+          8,
+          0
+        ],
+        "action_sequence_len": 21
+      },
+      "frame_source": {
+        "type": "demo_imgs",
+        "image_aliases": [
+          "hist_1",
+          "hist_2",
+          "current"
+        ]
+      },
+      "image_paths": [
+        "demo_imgs/hist_1.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/current.png"
+      ],
+      "image_hashes": {
+        "image_0": {
+          "path": "demo_imgs/hist_1.png",
+          "sha256": "151b4d027ff8997ad56a316aaa05307a0bba60fdb38136a1740a6e42370e383d",
+          "bytes": 3754808
+        },
+        "image_1": {
+          "path": "demo_imgs/hist_2.png",
+          "sha256": "320819abce4045a3404d15e6cbe9930302f4ff3a33be2a79b0b836a76ba32cea",
+          "bytes": 3877442
+        },
+        "image_2": {
+          "path": "demo_imgs/current.png",
+          "sha256": "379150b2c4b94cc0b2265d0794b4e7356a557fe86dc078e6d190cadcb6ff7692",
+          "bytes": 3548683
+        }
+      },
+      "action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "8_move_forward_6",
+        "l2_distance": 1.4142135623730951,
+        "l1_distance": 2.0,
+        "template_action": [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 6.972549019607843,
+        "l2": 5.175775354382292,
+        "max_abs": 4.980392156862745
+      },
+      "elapsed_sec": 0.82,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4463.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      }
+    },
+    {
+      "name": "official_seen_2",
+      "group": "official_prompt",
+      "note": "官方 annotation 风格导航指令；图像仍使用自有三帧，因此只验证语言分布敏感性。",
+      "prompt": "Proceed directly ahead to a green and brown medium - sized area featuring a circular design , which is identified as either a garden or park . Then , slightly turn right and advance forward to a large red building characterized by a rectangular shape with multiple windows . Make a right slightly turn to reach it . Finally , move forward to it .",
+      "prompt_source": {
+        "split": "seen",
+        "index": 2,
+        "annotation_path": "openfly_ann/Annotation/seen.json",
+        "annotation_image_path": "env_gs_ecust/astar_data/long/2025-1-8_14-31-35_1544617505",
+        "prompt": "Proceed directly ahead to a green and brown medium - sized area featuring a circular design , which is identified as either a garden or park . Then , slightly turn right and advance forward to a large red building characterized by a rectangular shape with multiple windows . Make a right slightly turn to reach it . Finally , move forward to it .",
+        "action_sequence": [
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          8,
+          3,
+          8,
+          3,
+          3,
+          3,
+          9,
+          9,
+          9,
+          9,
+          1,
+          0
+        ],
+        "action_sequence_len": 18
+      },
+      "frame_source": {
+        "type": "demo_imgs",
+        "image_aliases": [
+          "hist_1",
+          "hist_2",
+          "current"
+        ]
+      },
+      "image_paths": [
+        "demo_imgs/hist_1.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/current.png"
+      ],
+      "image_hashes": {
+        "image_0": {
+          "path": "demo_imgs/hist_1.png",
+          "sha256": "151b4d027ff8997ad56a316aaa05307a0bba60fdb38136a1740a6e42370e383d",
+          "bytes": 3754808
+        },
+        "image_1": {
+          "path": "demo_imgs/hist_2.png",
+          "sha256": "320819abce4045a3404d15e6cbe9930302f4ff3a33be2a79b0b836a76ba32cea",
+          "bytes": 3877442
+        },
+        "image_2": {
+          "path": "demo_imgs/current.png",
+          "sha256": "379150b2c4b94cc0b2265d0794b4e7356a557fe86dc078e6d190cadcb6ff7692",
+          "bytes": 3548683
+        }
+      },
+      "action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "8_move_forward_6",
+        "l2_distance": 1.4142135623730951,
+        "l1_distance": 2.0,
+        "template_action": [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 6.972549019607843,
+        "l2": 5.175775354382292,
+        "max_abs": 4.980392156862745
+      },
+      "elapsed_sec": 0.801,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      }
+    },
+    {
+      "name": "official_seen_3",
+      "group": "official_prompt",
+      "note": "官方 annotation 风格导航指令；图像仍使用自有三帧，因此只验证语言分布敏感性。",
+      "prompt": "Begin by continuing straight towards a large , gray building with a circular shape and a glass facade . Then , make a right slightly turn towards it . Proceed straight ahead , slightly turning right , towards a medium - sized multicolored building featuring a roof with blue and red sections . Finally , slightly turn left and keep going straight towards another medium - sized , grey , rectangular building with multiple windows .",
+      "prompt_source": {
+        "split": "seen",
+        "index": 3,
+        "annotation_path": "openfly_ann/Annotation/seen.json",
+        "annotation_image_path": "env_gs_ecust/astar_data/long/2025-1-10_13-26-39_990892921",
+        "prompt": "Begin by continuing straight towards a large , gray building with a circular shape and a glass facade . Then , make a right slightly turn towards it . Proceed straight ahead , slightly turning right , towards a medium - sized multicolored building featuring a roof with blue and red sections . Finally , slightly turn left and keep going straight towards another medium - sized , grey , rectangular building with multiple windows .",
+        "action_sequence": [
+          9,
+          9,
+          9,
+          9,
+          9,
+          8,
+          3,
+          3,
+          9,
+          1,
+          3,
+          9,
+          2,
+          8,
+          0
+        ],
+        "action_sequence_len": 15
+      },
+      "frame_source": {
+        "type": "demo_imgs",
+        "image_aliases": [
+          "hist_1",
+          "hist_2",
+          "current"
+        ]
+      },
+      "image_paths": [
+        "demo_imgs/hist_1.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/current.png"
+      ],
+      "image_hashes": {
+        "image_0": {
+          "path": "demo_imgs/hist_1.png",
+          "sha256": "151b4d027ff8997ad56a316aaa05307a0bba60fdb38136a1740a6e42370e383d",
+          "bytes": 3754808
+        },
+        "image_1": {
+          "path": "demo_imgs/hist_2.png",
+          "sha256": "320819abce4045a3404d15e6cbe9930302f4ff3a33be2a79b0b836a76ba32cea",
+          "bytes": 3877442
+        },
+        "image_2": {
+          "path": "demo_imgs/current.png",
+          "sha256": "379150b2c4b94cc0b2265d0794b4e7356a557fe86dc078e6d190cadcb6ff7692",
+          "bytes": 3548683
+        }
+      },
+      "action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "8_move_forward_6",
+        "l2_distance": 1.4142135623730951,
+        "l1_distance": 2.0,
+        "template_action": [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 6.972549019607843,
+        "l2": 5.175775354382292,
+        "max_abs": 4.980392156862745
+      },
+      "elapsed_sec": 0.794,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      }
+    },
+    {
+      "name": "official_seen_4",
+      "group": "official_prompt",
+      "note": "官方 annotation 风格导航指令；图像仍使用自有三帧，因此只验证语言分布敏感性。",
+      "prompt": "Proceed to the gray and glass modern multi - story building with a glass facade , then slightly turn right and continue toward the white and glass structure featuring a rectangular shape with a glass facade . Veer left toward the dark green lake surrounded by paths and vegetation . Head straight to it . Slightly turn right and advance to the red building with multiple large windows , then slightly turn left and keep going straight to it .",
+      "prompt_source": {
+        "split": "seen",
+        "index": 4,
+        "annotation_path": "openfly_ann/Annotation/seen.json",
+        "annotation_image_path": "env_gs_ecust/astar_data/long/2025-1-9_10-23-53_592962932",
+        "prompt": "Proceed to the gray and glass modern multi - story building with a glass facade , then slightly turn right and continue toward the white and glass structure featuring a rectangular shape with a glass facade . Veer left toward the dark green lake surrounded by paths and vegetation . Head straight to it . Slightly turn right and advance to the red building with multiple large windows , then slightly turn left and keep going straight to it .",
+        "action_sequence": [
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          1,
+          3,
+          9,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          1,
+          3,
+          9,
+          9,
+          2,
+          1,
+          0
+        ],
+        "action_sequence_len": 29
+      },
+      "frame_source": {
+        "type": "demo_imgs",
+        "image_aliases": [
+          "hist_1",
+          "hist_2",
+          "current"
+        ]
+      },
+      "image_paths": [
+        "demo_imgs/hist_1.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/current.png"
+      ],
+      "image_hashes": {
+        "image_0": {
+          "path": "demo_imgs/hist_1.png",
+          "sha256": "151b4d027ff8997ad56a316aaa05307a0bba60fdb38136a1740a6e42370e383d",
+          "bytes": 3754808
+        },
+        "image_1": {
+          "path": "demo_imgs/hist_2.png",
+          "sha256": "320819abce4045a3404d15e6cbe9930302f4ff3a33be2a79b0b836a76ba32cea",
+          "bytes": 3877442
+        },
+        "image_2": {
+          "path": "demo_imgs/current.png",
+          "sha256": "379150b2c4b94cc0b2265d0794b4e7356a557fe86dc078e6d190cadcb6ff7692",
+          "bytes": 3548683
+        }
+      },
+      "action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        14.970588235294118,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        0,
+        0,
+        15,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "2_turn_left",
+        "l2_distance": 1.0,
+        "l1_distance": 1.0,
+        "template_action": [
+          0,
+          0,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 16.933333333333334,
+        "l2": 15.007434784404385,
+        "max_abs": 14.941176470588236
+      },
+      "elapsed_sec": 0.784,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      }
+    },
+    {
+      "name": "official_unseen_0",
+      "group": "official_prompt",
+      "note": "官方 annotation 风格导航指令；图像仍使用自有三帧，因此只验证语言分布敏感性。",
+      "prompt": "Proceed towards a medium - sized light beige commercial building characterized by an art deco design with palm trees on the rooftop and decorative tiles .",
+      "prompt_source": {
+        "split": "unseen",
+        "index": 0,
+        "annotation_path": "openfly_ann/Annotation/unseen.json",
+        "annotation_image_path": "env_game_gtav/low_average/2025-1-16_14-27-53_711645630",
+        "prompt": "Proceed towards a medium - sized light beige commercial building characterized by an art deco design with palm trees on the rooftop and decorative tiles .",
+        "action_sequence": [
+          9,
+          9,
+          1,
+          0
+        ],
+        "action_sequence_len": 4
+      },
+      "frame_source": {
+        "type": "demo_imgs",
+        "image_aliases": [
+          "hist_1",
+          "hist_2",
+          "current"
+        ]
+      },
+      "image_paths": [
+        "demo_imgs/hist_1.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/current.png"
+      ],
+      "image_hashes": {
+        "image_0": {
+          "path": "demo_imgs/hist_1.png",
+          "sha256": "151b4d027ff8997ad56a316aaa05307a0bba60fdb38136a1740a6e42370e383d",
+          "bytes": 3754808
+        },
+        "image_1": {
+          "path": "demo_imgs/hist_2.png",
+          "sha256": "320819abce4045a3404d15e6cbe9930302f4ff3a33be2a79b0b836a76ba32cea",
+          "bytes": 3877442
+        },
+        "image_2": {
+          "path": "demo_imgs/current.png",
+          "sha256": "379150b2c4b94cc0b2265d0794b4e7356a557fe86dc078e6d190cadcb6ff7692",
+          "bytes": 3548683
+        }
+      },
+      "action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "0_stop",
+        "l2_distance": 1.0,
+        "l1_distance": 1.0,
+        "template_action": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 0.996078431372549,
+        "l2": 0.996078431372549,
+        "max_abs": 0.996078431372549
+      },
+      "elapsed_sec": 0.809,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      }
+    },
+    {
+      "name": "official_unseen_1",
+      "group": "official_prompt",
+      "note": "官方 annotation 风格导航指令；图像仍使用自有三帧，因此只验证语言分布敏感性。",
+      "prompt": "Proceed directly ahead toward the dark gray structure , distinguished by its tall , modern glass facade . This very large building is identified as a skyscraper .",
+      "prompt_source": {
+        "split": "unseen",
+        "index": 1,
+        "annotation_path": "openfly_ann/Annotation/unseen.json",
+        "annotation_image_path": "env_game_gtav/low_average/2025-1-16_14-54-16_1370973813",
+        "prompt": "Proceed directly ahead toward the dark gray structure , distinguished by its tall , modern glass facade . This very large building is identified as a skyscraper .",
+        "action_sequence": [
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          8,
+          0
+        ],
+        "action_sequence_len": 8
+      },
+      "frame_source": {
+        "type": "demo_imgs",
+        "image_aliases": [
+          "hist_1",
+          "hist_2",
+          "current"
+        ]
+      },
+      "image_paths": [
+        "demo_imgs/hist_1.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/current.png"
+      ],
+      "image_hashes": {
+        "image_0": {
+          "path": "demo_imgs/hist_1.png",
+          "sha256": "151b4d027ff8997ad56a316aaa05307a0bba60fdb38136a1740a6e42370e383d",
+          "bytes": 3754808
+        },
+        "image_1": {
+          "path": "demo_imgs/hist_2.png",
+          "sha256": "320819abce4045a3404d15e6cbe9930302f4ff3a33be2a79b0b836a76ba32cea",
+          "bytes": 3877442
+        },
+        "image_2": {
+          "path": "demo_imgs/current.png",
+          "sha256": "379150b2c4b94cc0b2265d0794b4e7356a557fe86dc078e6d190cadcb6ff7692",
+          "bytes": 3548683
+        }
+      },
+      "action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "0_stop",
+        "l2_distance": 1.0,
+        "l1_distance": 1.0,
+        "template_action": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 0.996078431372549,
+        "l2": 0.996078431372549,
+        "max_abs": 0.996078431372549
+      },
+      "elapsed_sec": 0.775,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      }
+    },
+    {
+      "name": "official_unseen_2",
+      "group": "official_prompt",
+      "note": "官方 annotation 风格导航指令；图像仍使用自有三帧，因此只验证语言分布敏感性。",
+      "prompt": "Walk straight towards the large , white building characterized by many windows . Then , slightly turn left and move forward to reach the large , light beige high - rise building featuring rectangular windows with dark frames , potentially serving as a residential or commercial structure .",
+      "prompt_source": {
+        "split": "unseen",
+        "index": 2,
+        "annotation_path": "openfly_ann/Annotation/unseen.json",
+        "annotation_image_path": "env_game_gtav/low_average/2025-1-16_14-27-47_780821396",
+        "prompt": "Walk straight towards the large , white building characterized by many windows . Then , slightly turn left and move forward to reach the large , light beige high - rise building featuring rectangular windows with dark frames , potentially serving as a residential or commercial structure .",
+        "action_sequence": [
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          2,
+          1,
+          0
+        ],
+        "action_sequence_len": 10
+      },
+      "frame_source": {
+        "type": "demo_imgs",
+        "image_aliases": [
+          "hist_1",
+          "hist_2",
+          "current"
+        ]
+      },
+      "image_paths": [
+        "demo_imgs/hist_1.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/current.png"
+      ],
+      "image_hashes": {
+        "image_0": {
+          "path": "demo_imgs/hist_1.png",
+          "sha256": "151b4d027ff8997ad56a316aaa05307a0bba60fdb38136a1740a6e42370e383d",
+          "bytes": 3754808
+        },
+        "image_1": {
+          "path": "demo_imgs/hist_2.png",
+          "sha256": "320819abce4045a3404d15e6cbe9930302f4ff3a33be2a79b0b836a76ba32cea",
+          "bytes": 3877442
+        },
+        "image_2": {
+          "path": "demo_imgs/current.png",
+          "sha256": "379150b2c4b94cc0b2265d0794b4e7356a557fe86dc078e6d190cadcb6ff7692",
+          "bytes": 3548683
+        }
+      },
+      "action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "8_move_forward_6",
+        "l2_distance": 1.4142135623730951,
+        "l1_distance": 2.0,
+        "template_action": [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 6.972549019607843,
+        "l2": 5.175775354382292,
+        "max_abs": 4.980392156862745
+      },
+      "elapsed_sec": 0.811,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      }
+    },
+    {
+      "name": "official_unseen_3",
+      "group": "official_prompt",
+      "note": "官方 annotation 风格导航指令；图像仍使用自有三帧，因此只验证语言分布敏感性。",
+      "prompt": "Walk directly towards the large beige building with a tile roof , slightly turn right , and proceed to the medium light brown and darker brown - roofed commercial or institutional building , characterized by its pyramidal tiled roof and ornate spires .",
+      "prompt_source": {
+        "split": "unseen",
+        "index": 3,
+        "annotation_path": "openfly_ann/Annotation/unseen.json",
+        "annotation_image_path": "env_game_gtav/low_average/2025-1-16_14-32-51_677870460",
+        "prompt": "Walk directly towards the large beige building with a tile roof , slightly turn right , and proceed to the medium light brown and darker brown - roofed commercial or institutional building , characterized by its pyramidal tiled roof and ornate spires .",
+        "action_sequence": [
+          9,
+          9,
+          9,
+          9,
+          9,
+          3,
+          9,
+          0
+        ],
+        "action_sequence_len": 8
+      },
+      "frame_source": {
+        "type": "demo_imgs",
+        "image_aliases": [
+          "hist_1",
+          "hist_2",
+          "current"
+        ]
+      },
+      "image_paths": [
+        "demo_imgs/hist_1.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/current.png"
+      ],
+      "image_hashes": {
+        "image_0": {
+          "path": "demo_imgs/hist_1.png",
+          "sha256": "151b4d027ff8997ad56a316aaa05307a0bba60fdb38136a1740a6e42370e383d",
+          "bytes": 3754808
+        },
+        "image_1": {
+          "path": "demo_imgs/hist_2.png",
+          "sha256": "320819abce4045a3404d15e6cbe9930302f4ff3a33be2a79b0b836a76ba32cea",
+          "bytes": 3877442
+        },
+        "image_2": {
+          "path": "demo_imgs/current.png",
+          "sha256": "379150b2c4b94cc0b2265d0794b4e7356a557fe86dc078e6d190cadcb6ff7692",
+          "bytes": 3548683
+        }
+      },
+      "action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "8_move_forward_6",
+        "l2_distance": 1.4142135623730951,
+        "l1_distance": 2.0,
+        "template_action": [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 6.972549019607843,
+        "l2": 5.175775354382292,
+        "max_abs": 4.980392156862745
+      },
+      "elapsed_sec": 0.818,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      }
+    },
+    {
+      "name": "official_unseen_4",
+      "group": "official_prompt",
+      "note": "官方 annotation 风格导航指令；图像仍使用自有三帧，因此只验证语言分布敏感性。",
+      "prompt": "Advance forward toward the large gray cable - stayed bridge , slightly turn left , and then proceed straight to the medium - high brown hotel building with a roof sign .",
+      "prompt_source": {
+        "split": "unseen",
+        "index": 4,
+        "annotation_path": "openfly_ann/Annotation/unseen.json",
+        "annotation_image_path": "env_game_gtav/low_average/2025-1-16_14-46-6_406011017",
+        "prompt": "Advance forward toward the large gray cable - stayed bridge , slightly turn left , and then proceed straight to the medium - high brown hotel building with a roof sign .",
+        "action_sequence": [
+          9,
+          1,
+          2,
+          9,
+          1,
+          0
+        ],
+        "action_sequence_len": 6
+      },
+      "frame_source": {
+        "type": "demo_imgs",
+        "image_aliases": [
+          "hist_1",
+          "hist_2",
+          "current"
+        ]
+      },
+      "image_paths": [
+        "demo_imgs/hist_1.png",
+        "demo_imgs/hist_2.png",
+        "demo_imgs/current.png"
+      ],
+      "image_hashes": {
+        "image_0": {
+          "path": "demo_imgs/hist_1.png",
+          "sha256": "151b4d027ff8997ad56a316aaa05307a0bba60fdb38136a1740a6e42370e383d",
+          "bytes": 3754808
+        },
+        "image_1": {
+          "path": "demo_imgs/hist_2.png",
+          "sha256": "320819abce4045a3404d15e6cbe9930302f4ff3a33be2a79b0b836a76ba32cea",
+          "bytes": 3877442
+        },
+        "image_2": {
+          "path": "demo_imgs/current.png",
+          "sha256": "379150b2c4b94cc0b2265d0794b4e7356a557fe86dc078e6d190cadcb6ff7692",
+          "bytes": 3548683
+        }
+      },
+      "action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "8_move_forward_6",
+        "l2_distance": 1.4142135623730951,
+        "l1_distance": 2.0,
+        "template_action": [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 6.972549019607843,
+        "l2": 5.175775354382292,
+        "max_abs": 4.980392156862745
+      },
+      "elapsed_sec": 0.796,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      }
+    },
+    {
+      "name": "video_frames_00_0.8s",
+      "group": "video_frames",
+      "note": "自有视频连续三帧；prompt 固定为 baseline prompt，用于观察视觉变化对 action 的影响。",
+      "prompt": "Fly forward carefully, avoid obstacles, and move towards the open area.",
+      "prompt_source": {
+        "type": "manual_baseline"
+      },
+      "frame_source": {
+        "type": "demo_video",
+        "center_time_sec": 0.8,
+        "center_frame": 24,
+        "frame_indices": [
+          22,
+          23,
+          24
+        ],
+        "image_hashes": {
+          "frame_22": {
+            "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_00_0.8s/hist_1_frame_0022.png",
+            "sha256": "273f7d37b7f625a2cf5936636b983f98fafb47f751476c99d0d9ac39085d1878",
+            "bytes": 2540624
+          },
+          "frame_23": {
+            "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_00_0.8s/hist_2_frame_0023.png",
+            "sha256": "f29308a46e08e71b574fcc4bab313a0046c2ec12d96e4ace7951446c7a64c354",
+            "bytes": 2515174
+          },
+          "frame_24": {
+            "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_00_0.8s/current_frame_0024.png",
+            "sha256": "239a981c6b41e86f0511bc61b6cef93a2b64f57a05fd7e3a40ffa58b1803b9bb",
+            "bytes": 2538274
+          }
+        }
+      },
+      "image_paths": [
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_00_0.8s/hist_1_frame_0022.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_00_0.8s/hist_2_frame_0023.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_00_0.8s/current_frame_0024.png"
+      ],
+      "image_hashes": {
+        "image_0": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_00_0.8s/hist_1_frame_0022.png",
+          "sha256": "273f7d37b7f625a2cf5936636b983f98fafb47f751476c99d0d9ac39085d1878",
+          "bytes": 2540624
+        },
+        "image_1": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_00_0.8s/hist_2_frame_0023.png",
+          "sha256": "f29308a46e08e71b574fcc4bab313a0046c2ec12d96e4ace7951446c7a64c354",
+          "bytes": 2515174
+        },
+        "image_2": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_00_0.8s/current_frame_0024.png",
+          "sha256": "239a981c6b41e86f0511bc61b6cef93a2b64f57a05fd7e3a40ffa58b1803b9bb",
+          "bytes": 2538274
+        }
+      },
+      "action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "8_move_forward_6",
+        "l2_distance": 1.0,
+        "l1_distance": 1.0,
+        "template_action": [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 5.976470588235294,
+        "l2": 5.079023358637519,
+        "max_abs": 4.980392156862745
+      },
+      "elapsed_sec": 0.855,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      }
+    },
+    {
+      "name": "video_frames_01_2.0s",
+      "group": "video_frames",
+      "note": "自有视频连续三帧；prompt 固定为 baseline prompt，用于观察视觉变化对 action 的影响。",
+      "prompt": "Fly forward carefully, avoid obstacles, and move towards the open area.",
+      "prompt_source": {
+        "type": "manual_baseline"
+      },
+      "frame_source": {
+        "type": "demo_video",
+        "center_time_sec": 2.0,
+        "center_frame": 60,
+        "frame_indices": [
+          58,
+          59,
+          60
+        ],
+        "image_hashes": {
+          "frame_58": {
+            "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_01_2.0s/hist_1_frame_0058.png",
+            "sha256": "0a40cafb54def7c59ebfc1a7a5cc0c121b69138b42ae2a7c70ddb2df1ec0c682",
+            "bytes": 2540067
+          },
+          "frame_59": {
+            "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_01_2.0s/hist_2_frame_0059.png",
+            "sha256": "ab3185ee0969c65f7c24d35a5872420892de34db59051a56139d72adb3dff37c",
+            "bytes": 2525090
+          },
+          "frame_60": {
+            "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_01_2.0s/current_frame_0060.png",
+            "sha256": "57e6972fa461591d44d7d679c060452b0d6379fd99b47fc32ff6e69672c31736",
+            "bytes": 2267093
+          }
+        }
+      },
+      "image_paths": [
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_01_2.0s/hist_1_frame_0058.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_01_2.0s/hist_2_frame_0059.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_01_2.0s/current_frame_0060.png"
+      ],
+      "image_hashes": {
+        "image_0": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_01_2.0s/hist_1_frame_0058.png",
+          "sha256": "0a40cafb54def7c59ebfc1a7a5cc0c121b69138b42ae2a7c70ddb2df1ec0c682",
+          "bytes": 2540067
+        },
+        "image_1": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_01_2.0s/hist_2_frame_0059.png",
+          "sha256": "ab3185ee0969c65f7c24d35a5872420892de34db59051a56139d72adb3dff37c",
+          "bytes": 2525090
+        },
+        "image_2": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_01_2.0s/current_frame_0060.png",
+          "sha256": "57e6972fa461591d44d7d679c060452b0d6379fd99b47fc32ff6e69672c31736",
+          "bytes": 2267093
+        }
+      },
+      "action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "8_move_forward_6",
+        "l2_distance": 1.0,
+        "l1_distance": 1.0,
+        "template_action": [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 5.976470588235294,
+        "l2": 5.079023358637519,
+        "max_abs": 4.980392156862745
+      },
+      "elapsed_sec": 0.843,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      }
+    },
+    {
+      "name": "video_frames_02_3.2s",
+      "group": "video_frames",
+      "note": "自有视频连续三帧；prompt 固定为 baseline prompt，用于观察视觉变化对 action 的影响。",
+      "prompt": "Fly forward carefully, avoid obstacles, and move towards the open area.",
+      "prompt_source": {
+        "type": "manual_baseline"
+      },
+      "frame_source": {
+        "type": "demo_video",
+        "center_time_sec": 3.2,
+        "center_frame": 96,
+        "frame_indices": [
+          94,
+          95,
+          96
+        ],
+        "image_hashes": {
+          "frame_94": {
+            "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_02_3.2s/hist_1_frame_0094.png",
+            "sha256": "23835aef7a9be4cf874c42914ded2aa15adbac187ac4b4d03fcf54a5d6b0b125",
+            "bytes": 2620347
+          },
+          "frame_95": {
+            "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_02_3.2s/hist_2_frame_0095.png",
+            "sha256": "5871334131a678c49d94ff9498a465cde20707f44f302772eac1759eead58f5d",
+            "bytes": 2634635
+          },
+          "frame_96": {
+            "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_02_3.2s/current_frame_0096.png",
+            "sha256": "eb6a8dde3c13ca8dc0e931195c9204fae90ef04ba7eeb4921c9f699a1597ce18",
+            "bytes": 2649866
+          }
+        }
+      },
+      "image_paths": [
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_02_3.2s/hist_1_frame_0094.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_02_3.2s/hist_2_frame_0095.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_02_3.2s/current_frame_0096.png"
+      ],
+      "image_hashes": {
+        "image_0": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_02_3.2s/hist_1_frame_0094.png",
+          "sha256": "23835aef7a9be4cf874c42914ded2aa15adbac187ac4b4d03fcf54a5d6b0b125",
+          "bytes": 2620347
+        },
+        "image_1": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_02_3.2s/hist_2_frame_0095.png",
+          "sha256": "5871334131a678c49d94ff9498a465cde20707f44f302772eac1759eead58f5d",
+          "bytes": 2634635
+        },
+        "image_2": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_02_3.2s/current_frame_0096.png",
+          "sha256": "eb6a8dde3c13ca8dc0e931195c9204fae90ef04ba7eeb4921c9f699a1597ce18",
+          "bytes": 2649866
+        }
+      },
+      "action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "8_move_forward_6",
+        "l2_distance": 1.0,
+        "l1_distance": 1.0,
+        "template_action": [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 5.976470588235294,
+        "l2": 5.079023358637519,
+        "max_abs": 4.980392156862745
+      },
+      "elapsed_sec": 0.838,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      }
+    },
+    {
+      "name": "video_frames_03_4.4s",
+      "group": "video_frames",
+      "note": "自有视频连续三帧；prompt 固定为 baseline prompt，用于观察视觉变化对 action 的影响。",
+      "prompt": "Fly forward carefully, avoid obstacles, and move towards the open area.",
+      "prompt_source": {
+        "type": "manual_baseline"
+      },
+      "frame_source": {
+        "type": "demo_video",
+        "center_time_sec": 4.4,
+        "center_frame": 132,
+        "frame_indices": [
+          130,
+          131,
+          132
+        ],
+        "image_hashes": {
+          "frame_130": {
+            "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_03_4.4s/hist_1_frame_0130.png",
+            "sha256": "1993109c168b3879413400f3605830889f5452f0a6ac096574c661c129b8f6f9",
+            "bytes": 2418942
+          },
+          "frame_131": {
+            "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_03_4.4s/hist_2_frame_0131.png",
+            "sha256": "a2c0dc5f08d58bdf6be9a25c168fa2cc2c80ff7a87feace06433a24f025036e6",
+            "bytes": 2405077
+          },
+          "frame_132": {
+            "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_03_4.4s/current_frame_0132.png",
+            "sha256": "321a20c1db39563d40f03e056dcaaed4738ac71cf2ccf18e8b26843d809d4269",
+            "bytes": 2387558
+          }
+        }
+      },
+      "image_paths": [
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_03_4.4s/hist_1_frame_0130.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_03_4.4s/hist_2_frame_0131.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_03_4.4s/current_frame_0132.png"
+      ],
+      "image_hashes": {
+        "image_0": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_03_4.4s/hist_1_frame_0130.png",
+          "sha256": "1993109c168b3879413400f3605830889f5452f0a6ac096574c661c129b8f6f9",
+          "bytes": 2418942
+        },
+        "image_1": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_03_4.4s/hist_2_frame_0131.png",
+          "sha256": "a2c0dc5f08d58bdf6be9a25c168fa2cc2c80ff7a87feace06433a24f025036e6",
+          "bytes": 2405077
+        },
+        "image_2": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_03_4.4s/current_frame_0132.png",
+          "sha256": "321a20c1db39563d40f03e056dcaaed4738ac71cf2ccf18e8b26843d809d4269",
+          "bytes": 2387558
+        }
+      },
+      "action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "8_move_forward_6",
+        "l2_distance": 1.0,
+        "l1_distance": 1.0,
+        "template_action": [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 5.976470588235294,
+        "l2": 5.079023358637519,
+        "max_abs": 4.980392156862745
+      },
+      "elapsed_sec": 0.852,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      }
+    },
+    {
+      "name": "video_frames_04_5.6s",
+      "group": "video_frames",
+      "note": "自有视频连续三帧；prompt 固定为 baseline prompt，用于观察视觉变化对 action 的影响。",
+      "prompt": "Fly forward carefully, avoid obstacles, and move towards the open area.",
+      "prompt_source": {
+        "type": "manual_baseline"
+      },
+      "frame_source": {
+        "type": "demo_video",
+        "center_time_sec": 5.6,
+        "center_frame": 168,
+        "frame_indices": [
+          166,
+          167,
+          168
+        ],
+        "image_hashes": {
+          "frame_166": {
+            "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_04_5.6s/hist_1_frame_0166.png",
+            "sha256": "05a340f6e1908aac4500f2876c1d778e6d8ad0b0faa251f85d13ab3c57a6d84f",
+            "bytes": 2393097
+          },
+          "frame_167": {
+            "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_04_5.6s/hist_2_frame_0167.png",
+            "sha256": "7c4558279b322bb276a1037747f0373a5f5a0b8851666b0048cf41ed6ec2d6c2",
+            "bytes": 2397222
+          },
+          "frame_168": {
+            "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_04_5.6s/current_frame_0168.png",
+            "sha256": "a5ffe31984045ee8daad2da1b0e8233c9905c3c5fe44322814d5b394ee2dca19",
+            "bytes": 2397049
+          }
+        }
+      },
+      "image_paths": [
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_04_5.6s/hist_1_frame_0166.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_04_5.6s/hist_2_frame_0167.png",
+        "demo_results/extended_experiments/20260628_235508/video_frames/group_04_5.6s/current_frame_0168.png"
+      ],
+      "image_hashes": {
+        "image_0": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_04_5.6s/hist_1_frame_0166.png",
+          "sha256": "05a340f6e1908aac4500f2876c1d778e6d8ad0b0faa251f85d13ab3c57a6d84f",
+          "bytes": 2393097
+        },
+        "image_1": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_04_5.6s/hist_2_frame_0167.png",
+          "sha256": "7c4558279b322bb276a1037747f0373a5f5a0b8851666b0048cf41ed6ec2d6c2",
+          "bytes": 2397222
+        },
+        "image_2": {
+          "path": "demo_results/extended_experiments/20260628_235508/video_frames/group_04_5.6s/current_frame_0168.png",
+          "sha256": "a5ffe31984045ee8daad2da1b0e8233c9905c3c5fe44322814d5b394ee2dca19",
+          "bytes": 2397049
+        }
+      },
+      "action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nearest_action_template": {
+        "template": "8_move_forward_6",
+        "l2_distance": 1.0,
+        "l1_distance": 1.0,
+        "template_action": [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "delta_vs_baseline_1": {
+        "l1": 5.976470588235294,
+        "l2": 5.079023358637519,
+        "max_abs": 4.980392156862745
+      },
+      "elapsed_sec": 0.856,
+      "gpu_before_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      },
+      "gpu_after_inference": {
+        "cuda_available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "allocated_mb": 4096.8,
+        "reserved_mb": 4552.0,
+        "max_allocated_mb": 4466.9
+      }
+    }
+  ],
+  "final_gpu": {
+    "cuda_available": true,
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "allocated_mb": 4095.1,
+    "reserved_mb": 4552.0,
+    "max_allocated_mb": 4466.9
+  },
+  "limitations": [
+    "Official-style prompts are paired with local demo video frames, not their original OpenFly images.",
+    "Video-frame experiments use a fixed prompt and only test visual sensitivity.",
+    "This is not a benchmark evaluation and does not produce NE/SR/OSR/SPL."
+  ]
+}

@@ -1,0 +1,926 @@
+[Run dir] /home/ruan/research/OpenFly-Platform/demo_results/airsim_smoke/20260629_004035
+{
+  "scene": {
+    "env_dir": "envs/airsim/env_airsim_16",
+    "env_dir_exists": true,
+    "start_script": "envs/airsim/env_airsim_16/LinuxNoEditor/start.sh",
+    "start_script_exists": true
+  },
+  "packages": {
+    "airsim": {
+      "ok": true
+    },
+    "msgpackrpc": {
+      "ok": true
+    }
+  },
+  "airsim_settings": {
+    "project_settings": "envs/airsim/AirSim/settings.json",
+    "project_exists": true,
+    "project_sha256": "b4a0afb9c31a2c2344041c6acd6155c3a04e34142eb4b5deffe736f674e1ef0f",
+    "user_settings": "/home/ruan/Documents/AirSim/settings.json",
+    "user_exists": true,
+    "user_sha256": "b4a0afb9c31a2c2344041c6acd6155c3a04e34142eb4b5deffe736f674e1ef0f",
+    "matches_project": true
+  },
+  "nvidia_smi": {
+    "gpu_query": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "NVIDIA GeForce RTX 4060 Laptop GPU, 580.159.03, 8188, 2, 0, 8.9",
+      "stderr": "",
+      "args": [
+        "nvidia-smi",
+        "--query-gpu=name,driver_version,memory.total,memory.used,utilization.gpu,compute_cap",
+        "--format=csv,noheader,nounits"
+      ]
+    },
+    "compute_apps_query": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "args": [
+        "nvidia-smi",
+        "--query-compute-apps=pid,process_name,used_memory",
+        "--format=csv,noheader,nounits"
+      ]
+    }
+  },
+  "selected_samples": [
+    {
+      "sample_index": 0,
+      "image_path": "env_airsim_16/astar_data/medium_average/2025-1-9_13-18-9_387451659",
+      "prompt": "Proceed in a straight line toward the large brown building with rectangular windows . Then , slightly turn right and advance forward to the gray building adorned with numerous large rectangular windows . Finally , make a slight left and continue straight to the gray office building characterized by horizontal window blinds and described as mid-rise .",
+      "action_len": 16
+    },
+    {
+      "sample_index": 1,
+      "image_path": "env_airsim_16/astar_data/low_average/2025-1-1_0-49-51_970925433",
+      "prompt": "Proceed directly towards the tall gray skyscraper featuring a clock tower on top , then make a slight left turn and advance towards the medium - sized beige commercial building with symmetrical windows and a large billboard .",
+      "action_len": 4
+    },
+    {
+      "sample_index": 2,
+      "image_path": "env_airsim_16/astar_data/medium_long/2025-1-9_16-34-14_1894519218",
+      "prompt": "Walk directly towards the beige cylindrical mast with a supporting frame on a rooftop , which is a large telecommunications tower . Then , slightly turn left and move forward to a dark grey tall building with antennas on top , categorized as a large skyscraper . Next , slightly turn right and proceed straight to it . Afterward , slightly turn right again and continue straight towards a gray commercial building with medium - sized dimensions , featuring windows with an arch design and consisting of multiple stories .",
+      "action_len": 17
+    }
+  ]
+}
+[Model] Registering OpenFly classes
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/transformers/models/auto/image_processing_auto.py:524: FutureWarning: The image_processor_class argument is deprecated and will be removed in v4.42. Please use `slow_image_processor_class`, or `fast_image_processor_class` instead
+  warnings.warn(
+[Model] Loading processor
+[Model] Loading 4bit model
+Expected `transformers==4.48.1` and `tokenizers==0.21.1` but got `transformers==4.47.1` and `tokenizers==0.21.4`; there might be inference-time regressions due to dependency changes. If in doubt, pleaseuse the above versions.
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for cls_token: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for reg_token: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for pos_embed: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for patch_embed.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for patch_embed.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.0.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.0.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.0.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.0.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.0.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.0.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.0.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.0.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.0.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.0.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.0.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.0.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.0.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.0.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.1.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.1.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.1.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.1.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.1.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.1.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.1.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.1.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.1.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.1.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.1.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.1.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.1.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.1.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.2.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.2.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.2.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.2.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.2.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.2.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.2.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.2.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.2.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.2.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.2.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.2.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.2.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.2.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.3.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.3.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.3.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.3.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.3.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.3.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.3.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.3.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.3.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.3.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.3.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.3.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.3.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.3.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.4.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.4.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.4.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.4.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.4.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.4.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.4.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.4.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.4.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.4.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.4.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.4.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.4.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.4.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.5.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.5.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.5.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.5.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.5.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.5.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.5.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.5.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.5.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.5.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.5.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.5.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.5.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.5.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.6.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.6.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.6.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.6.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.6.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.6.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.6.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.6.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.6.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.6.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.6.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.6.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.6.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.6.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.7.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.7.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.7.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.7.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.7.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.7.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.7.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.7.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.7.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.7.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.7.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.7.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.7.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.7.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.8.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.8.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.8.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.8.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.8.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.8.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.8.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.8.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.8.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.8.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.8.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.8.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.8.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.8.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.9.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.9.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.9.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.9.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.9.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.9.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.9.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.9.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.9.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.9.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.9.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.9.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.9.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.9.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.10.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.10.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.10.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.10.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.10.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.10.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.10.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.10.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.10.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.10.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.10.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.10.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.10.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.10.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.11.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.11.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.11.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.11.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.11.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.11.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.11.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.11.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.11.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.11.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.11.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.11.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.11.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.11.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.12.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.12.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.12.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.12.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.12.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.12.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.12.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.12.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.12.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.12.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.12.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.12.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.12.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.12.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.13.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.13.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.13.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.13.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.13.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.13.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.13.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.13.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.13.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.13.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.13.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.13.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.13.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.13.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.14.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.14.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.14.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.14.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.14.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.14.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.14.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.14.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.14.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.14.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.14.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.14.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.14.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.14.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.15.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.15.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.15.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.15.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.15.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.15.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.15.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.15.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.15.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.15.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.15.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.15.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.15.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.15.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.16.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.16.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.16.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.16.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.16.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.16.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.16.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.16.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.16.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.16.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.16.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.16.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.16.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.16.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.17.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.17.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.17.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.17.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.17.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.17.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.17.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.17.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.17.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.17.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.17.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.17.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.17.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.17.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.18.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.18.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.18.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.18.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.18.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.18.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.18.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.18.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.18.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.18.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.18.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.18.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.18.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.18.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.19.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.19.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.19.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.19.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.19.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.19.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.19.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.19.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.19.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.19.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.19.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.19.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.19.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.19.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.20.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.20.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.20.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.20.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.20.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.20.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.20.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.20.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.20.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.20.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.20.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.20.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.20.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.20.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.21.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.21.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.21.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.21.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.21.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.21.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.21.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.21.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.21.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.21.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.21.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.21.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.21.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.21.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.22.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.22.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.22.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.22.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.22.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.22.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.22.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.22.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.22.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.22.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.22.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.22.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.22.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.22.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.23.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.23.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.23.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.23.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.23.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.23.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.23.ls1.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.23.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.23.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.23.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.23.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.23.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.23.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.23.ls2.gamma: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for norm.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for norm.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.24.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.24.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.24.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.24.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.24.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.24.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.24.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.24.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.24.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.24.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.24.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.24.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.25.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.25.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.25.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.25.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.25.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.25.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.25.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.25.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.25.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.25.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.25.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.25.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.26.norm1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.26.norm1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.26.attn.qkv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.26.attn.qkv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.26.attn.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.26.attn.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.26.norm2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.26.norm2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.26.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.26.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.26.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for blocks.26.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for attn_pool.latent: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for attn_pool.q.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for attn_pool.q.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for attn_pool.kv.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for attn_pool.kv.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for attn_pool.proj.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for attn_pool.proj.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for attn_pool.norm.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for attn_pool.norm.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for attn_pool.mlp.fc1.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for attn_pool.mlp.fc1.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for attn_pool.mlp.fc2.weight: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/torch/nn/modules/module.py:2588: UserWarning: for attn_pool.mlp.fc2.bias: copying from a non-meta parameter in the checkpoint to a meta parameter in the current model, which is a no-op. (Did you mean to pass `assign=True` to assign items in the state dictionary to their corresponding key in the module instead of copying them in place?)
+  module._load_from_state_dict(
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/bitsandbytes/backends/cuda/ops.py:213: FutureWarning: _check_is_size will be removed in a future PyTorch release along with guard_size_oblivious.     Use _check(i >= 0) instead.
+  torch._check_is_size(blocksize)
+Loading checkpoint shards:  33%|###3      | 1/3 [00:04<00:08,  4.21s/it]Loading checkpoint shards:  67%|######6   | 2/3 [00:08<00:04,  4.26s/it]Loading checkpoint shards: 100%|##########| 3/3 [00:09<00:00,  2.65s/it]Loading checkpoint shards: 100%|##########| 3/3 [00:09<00:00,  3.08s/it]
+[Model loaded]: allocated=4087.0MB reserved=4210.0MB max_allocated=4145.3MB
+[AirSim] Started env_airsim_16; waiting 20.0s
+[AirSim] Connected
+[Sample 0] env_airsim_16/astar_data/medium_average/2025-1-9_13-18-9_387451659
+/home/ruan/miniconda3/envs/openfly/lib/python3.10/site-packages/bitsandbytes/backends/cuda/ops.py:468: FutureWarning: _check_is_size will be removed in a future PyTorch release along with guard_size_oblivious.     Use _check(i >= 0) instead.
+  torch._check_is_size(blocksize)
+[Sample 0 step 0] action_id=9 dist=94.583 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 0 step 1] action_id=9 dist=85.603 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 0 step 2] action_id=9 dist=76.628 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 0 step 3] action_id=9 dist=67.659 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 0 step 4] action_id=9 dist=58.700 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 0 step 5] action_id=9 dist=49.755 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 0 step 6] action_id=9 dist=40.836 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 0 step 7] action_id=9 dist=31.961 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 0 step 8] action_id=9 dist=23.182 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 0 step 9] action_id=9 dist=14.675 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 0 step 10] action_id=9 dist=7.436 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 0 step 11] action_id=0 dist=7.436 raw=[0.9980392156862745, 0.01764705882352935, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1] env_airsim_16/astar_data/low_average/2025-1-1_0-49-51_970925433
+[Sample 1 step 0] action_id=9 dist=3.106 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1 step 1] action_id=9 dist=10.253 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1 step 2] action_id=9 dist=19.042 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1 step 3] action_id=9 dist=27.965 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1 step 4] action_id=9 dist=36.926 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1 step 5] action_id=9 dist=45.902 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1 step 6] action_id=9 dist=54.886 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1 step 7] action_id=9 dist=63.874 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1 step 8] action_id=1 dist=66.871 raw=[0.0019607843137254832, 3.01764705882353, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1 step 9] action_id=1 dist=69.868 raw=[0.0019607843137254832, 3.01764705882353, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1 step 10] action_id=9 dist=78.861 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1 step 11] action_id=9 dist=87.855 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1 step 12] action_id=1 dist=90.853 raw=[0.0019607843137254832, 3.01764705882353, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1 step 13] action_id=9 dist=99.849 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1 step 14] action_id=9 dist=108.845 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1 step 15] action_id=9 dist=117.842 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1 step 16] action_id=9 dist=126.839 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1 step 17] action_id=2 dist=126.839 raw=[0.0019607843137254832, 0.01764705882352935, 14.970588235294118, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1 step 18] action_id=2 dist=126.839 raw=[0.0019607843137254832, 0.01764705882352935, 14.970588235294118, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 1 step 19] action_id=9 dist=131.391 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 2] env_airsim_16/astar_data/medium_long/2025-1-9_16-34-14_1894519218
+[Sample 2 step 0] action_id=9 dist=88.997 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 2 step 1] action_id=3 dist=88.997 raw=[0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 14.970588235294118, 0.0, 0.0, 0.0, 0.0]
+[Sample 2 step 2] action_id=9 dist=80.503 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 2 step 3] action_id=9 dist=72.133 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 2 step 4] action_id=9 dist=63.934 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 2 step 5] action_id=9 dist=55.981 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 2 step 6] action_id=9 dist=48.396 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 2 step 7] action_id=9 dist=41.383 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 2 step 8] action_id=9 dist=35.283 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 2 step 9] action_id=9 dist=30.647 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 2 step 10] action_id=9 dist=28.206 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 2 step 11] action_id=3 dist=28.206 raw=[0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 14.970588235294118, 0.0, 0.0, 0.0, 0.0]
+[Sample 2 step 12] action_id=1 dist=29.504 raw=[0.0019607843137254832, 3.01764705882353, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 2 step 13] action_id=9 dist=34.686 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 2 step 14] action_id=3 dist=34.686 raw=[0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 14.970588235294118, 0.0, 0.0, 0.0, 0.0]
+[Sample 2 step 15] action_id=3 dist=34.686 raw=[0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 14.970588235294118, 0.0, 0.0, 0.0, 0.0]
+[Sample 2 step 16] action_id=3 dist=34.686 raw=[0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 14.970588235294118, 0.0, 0.0, 0.0, 0.0]
+[Sample 2 step 17] action_id=9 dist=41.854 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 2 step 18] action_id=9 dist=49.623 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[Sample 2 step 19] action_id=9 dist=57.750 raw=[0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0]
+[AirSim] Terminating spawned process group
+[Done] results: /home/ruan/research/OpenFly-Platform/demo_results/airsim_smoke/20260629_004035/results.json
+[Done] summary: /home/ruan/research/OpenFly-Platform/demo_results/airsim_smoke/20260629_004035/summary.md

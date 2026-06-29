@@ -1,0 +1,1209 @@
+{
+  "created_at": "2026-06-29T01:25:55",
+  "scope": "OpenFly-Agent local 4bit inference reproduction and lightweight sensitivity experiments",
+  "repo": {
+    "commit": "c075075497a7122bad82f5b76b9be926ad5a81b3",
+    "branch": "main",
+    "dirty": true,
+    "status_short": [
+      "?? CLAUDE.md",
+      "?? analyze_airsim_smoke_results.py",
+      "?? demo_imgs/",
+      "?? demo_results/",
+      "?? demo_video.mp4",
+      "?? download_openfly_airsim_scene.py",
+      "?? eval_airsim_4bit_smoke.py",
+      "?? generate_reproduction_audit.py",
+      "?? infer_openfly_4bit.py",
+      "?? openfly_ann/",
+      "?? prepare_airsim_review_assets.py",
+      "?? run_openfly_experiments.py",
+      "?? run_openfly_extended_experiments.py"
+    ],
+    "remote": [
+      "origin\thttps://github.com/SHAILAB-IPEC/OpenFly-Platform.git (fetch)",
+      "origin\thttps://github.com/SHAILAB-IPEC/OpenFly-Platform.git (push)"
+    ]
+  },
+  "model": {
+    "id": "IPEC-COMMUNITY/openfly-agent-7b",
+    "revision": "21dcce235f1f2d40fc23c76998051abc5434cc99",
+    "unnorm_key": "vln_norm",
+    "do_sample": false
+  },
+  "environment": {
+    "python": "3.10.20",
+    "python_executable": "/home/ruan/miniconda3/envs/openfly/bin/python",
+    "platform": "Linux-6.8.0-85-generic-x86_64-with-glibc2.35",
+    "torch": "2.12.1+cu126",
+    "cuda_available": true,
+    "cuda_device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "cuda_capability": [
+      8,
+      9
+    ],
+    "transformers": "4.47.1",
+    "tokenizers": "0.21.4",
+    "timm": "0.9.16",
+    "bitsandbytes": "0.49.2",
+    "hf_hub_enable_hf_transfer": null,
+    "pytorch_cuda_alloc_conf": null
+  },
+  "nvidia_smi": {
+    "gpu_query": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "NVIDIA GeForce RTX 4060 Laptop GPU, 580.159.03, 8188, 4, 0, 8.9",
+      "stderr": "",
+      "args": [
+        "nvidia-smi",
+        "--query-gpu=name,driver_version,memory.total,memory.used,utilization.gpu,compute_cap",
+        "--format=csv,noheader,nounits"
+      ]
+    },
+    "compute_apps_query": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "args": [
+        "nvidia-smi",
+        "--query-compute-apps=pid,process_name,used_memory",
+        "--format=csv,noheader,nounits"
+      ]
+    }
+  },
+  "hf_cli_status": {
+    "standalone_hf_cli": {
+      "path": "/home/ruan/.local/bin/hf",
+      "exists": true,
+      "bytes": 187,
+      "sha256": "c2e1a0aa3af941f5113764098e9997ecdf879a8f6f1e48454f24d861234065b7"
+    },
+    "version": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "version=1.21.0",
+      "stderr": "",
+      "args": [
+        "/home/ruan/.local/bin/hf",
+        "version"
+      ]
+    },
+    "whoami": {
+      "ok": false,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Error: Not logged in",
+      "args": [
+        "/home/ruan/.local/bin/hf",
+        "auth",
+        "whoami"
+      ]
+    },
+    "env": {
+      "ok": true,
+      "returncode": 0,
+      "stdout": "Copy-and-paste the text below in your GitHub issue.\n\n- huggingface_hub version: 1.21.0\n- Platform: Linux-6.8.0-85-generic-x86_64-with-glibc2.35\n- Python version: 3.10.20\n- Running in iPython ?: No\n- Running in notebook ?: No\n- Running in Google Colab ?: No\n- Running in Google Colab Enterprise ?: No\n- Token path ?: /home/ruan/.cache/huggingface/token\n- Has saved token ?: False\n- Configured git credential helpers: \n- Run by AI agent ?: Yes\n- Installation method: hf_installer\n- httpx: 0.28.1\n- hf_xet: 1.5.1\n- gradio: N/A\n- tensorboard: N/A\n- ENDPOINT: https://huggingface.co\n- HF_HUB_CACHE: /home/ruan/.cache/huggingface/hub\n- HF_ASSETS_CACHE: /home/ruan/.cache/huggingface/assets\n- HF_TOKEN_PATH: /home/ruan/.cache/huggingface/token\n- HF_STORED_TOKENS_PATH: /home/ruan/.cache/huggingface/stored_tokens\n- HF_HUB_OFFLINE: False\n- HF_HUB_DISABLE_TELEMETRY: False\n- HF_HUB_DISABLE_PROGRESS_BARS: None\n- HF_HUB_DISABLE_SYMLINKS: False\n- HF_HUB_DISABLE_SYMLINKS_WARNING: False\n- HF_HUB_DISABLE_EXPERIMENTAL_WARNING: False\n- HF_HUB_DISABLE_IMPLICIT_TOKEN: False\n- HF_HUB_DISABLE_XET: False\n- HF_HUB_ETAG_TIMEOUT: 10\n- HF_HUB_DOWNLOAD_TIMEOUT: 10\n- HF_XET_HIGH_PERFORMANCE: False",
+      "stderr": "",
+      "args": [
+        "/home/ruan/.local/bin/hf",
+        "env"
+      ]
+    },
+    "hf_cli_skill_dir": "/home/ruan/.agents/skills/hf-cli",
+    "hf_cli_skill_installed": true
+  },
+  "input_files": {
+    "hist_1": {
+      "path": "demo_imgs/hist_1.png",
+      "exists": true,
+      "bytes": 3754808,
+      "sha256": "151b4d027ff8997ad56a316aaa05307a0bba60fdb38136a1740a6e42370e383d"
+    },
+    "hist_2": {
+      "path": "demo_imgs/hist_2.png",
+      "exists": true,
+      "bytes": 3877442,
+      "sha256": "320819abce4045a3404d15e6cbe9930302f4ff3a33be2a79b0b836a76ba32cea"
+    },
+    "current": {
+      "path": "demo_imgs/current.png",
+      "exists": true,
+      "bytes": 3548683,
+      "sha256": "379150b2c4b94cc0b2265d0794b4e7356a557fe86dc078e6d190cadcb6ff7692"
+    },
+    "demo_video": {
+      "path": "demo_video.mp4",
+      "exists": true,
+      "bytes": 15593644,
+      "sha256": "636f2344c5a0127c576e426e91a15961b1f2c5b80557e11bf04df9ca42d86d7c"
+    },
+    "openfly_paper_pdf": {
+      "path": "/home/ruan/research/Gao 等 - 2026 - Openfly A comprehensive platform ..pdf",
+      "exists": true,
+      "bytes": 9247050,
+      "sha256": "0c1ab59f3027ff8f74d5857036efa749217dfc502f4c3feed6e8964d67e33571"
+    }
+  },
+  "script_files": {
+    "single_inference": {
+      "path": "infer_openfly_4bit.py",
+      "exists": true,
+      "bytes": 4117,
+      "sha256": "796459e46a3377609ea7e404fc18695f0a985ac29e09d7eaad22ffd5c319e02b"
+    },
+    "experiment_runner": {
+      "path": "run_openfly_experiments.py",
+      "exists": true,
+      "bytes": 23628,
+      "sha256": "f563e240e3b19b62de17175d6884e474f37c76b331b5af450aeb34b4f55beff2"
+    },
+    "extended_experiment_runner": {
+      "path": "run_openfly_extended_experiments.py",
+      "exists": true,
+      "bytes": 20869,
+      "sha256": "26bdc8f5165b49190795210828d885aefba1e66432674e601aa9563be7874836"
+    },
+    "airsim_smoke_eval": {
+      "path": "eval_airsim_4bit_smoke.py",
+      "exists": true,
+      "bytes": 33010,
+      "sha256": "6b84f8b1428c9b8126182586e698e898dc29f685253321c66262fe88b97dce57"
+    },
+    "airsim_smoke_analyzer": {
+      "path": "analyze_airsim_smoke_results.py",
+      "exists": true,
+      "bytes": 7758,
+      "sha256": "ba0bd3b53be48ca8d988849e3af05a91290ab29c0a55ef35ee417c8e61169280"
+    },
+    "airsim_review_assets": {
+      "path": "prepare_airsim_review_assets.py",
+      "exists": true,
+      "bytes": 9335,
+      "sha256": "f9b1fa8b7503bfcda6de63a191a09e5945680576575c38f84cff3ec8da34e6d9"
+    },
+    "airsim_scene_downloader": {
+      "path": "download_openfly_airsim_scene.py",
+      "exists": true,
+      "bytes": 7130,
+      "sha256": "5ac4495a44bb7be99ff983f7fedcf9393c317b2bf8f66b6f17b2a519de64c74d"
+    },
+    "audit_generator": {
+      "path": "generate_reproduction_audit.py",
+      "exists": true,
+      "bytes": 31388,
+      "sha256": "49b1bfdd894c6feca89bf0e275a7de9c85cfc166747261246b9c1d828e169145"
+    }
+  },
+  "result_files": {
+    "single_inference_result": {
+      "path": "demo_results/openfly_own_video_result.json",
+      "exists": true,
+      "bytes": 453,
+      "sha256": "08e173cee1bf17f25ae1825cc999a52066acb215eb7ca56af361fb024a429161"
+    },
+    "experiment_results": {
+      "path": "demo_results/extended_experiments/20260628_235508/results.json",
+      "exists": true,
+      "bytes": 73102,
+      "sha256": "277724f47fa255392693f5b70ee6c7bd848d7d30d4a8b9f772547426243da74f"
+    },
+    "experiment_summary": {
+      "path": "demo_results/extended_experiments/20260628_235508/summary.md",
+      "exists": true,
+      "bytes": 4965,
+      "sha256": "2d5767465e4073964a0b3a0562e365a22ccc058ad69398c20497deb0a0005159"
+    },
+    "experiment_log": {
+      "path": "demo_results/extended_experiments/20260628_235508/run.log",
+      "exists": true,
+      "bytes": 185644,
+      "sha256": "ab18a588b502acd86565f9e57483f03290f6d240dc7d5415f1726e9e9aa3b8ea"
+    },
+    "top_level_pip_freeze": {
+      "path": "demo_results/pip_freeze_openfly.txt",
+      "exists": true,
+      "bytes": 1503,
+      "sha256": "98da7826cc14effda2c355a8f325def36d75ee9e8026571de7e0a42b889ad030"
+    },
+    "simulation_eval_plan": {
+      "path": "demo_results/simulation_eval_plan.md",
+      "exists": true,
+      "bytes": 7954,
+      "sha256": "104fd51a0a135325d8d1ac6639b9af978043edf5c991c9b43e417a0771bcdd7c"
+    },
+    "openfly_paper_text_extract": {
+      "path": "demo_results/paper/openfly_paper.txt",
+      "exists": true,
+      "bytes": 83055,
+      "sha256": "473fa046037e6e330d18231625d766896a2f6fb65da264e7c5988f3e84941d38"
+    },
+    "official_eval_alignment_audit": {
+      "path": "demo_results/official_eval_alignment_audit.md",
+      "exists": true,
+      "bytes": 5376,
+      "sha256": "b1bb4c6884b3504ed388c8cb07082672873a7158fdec73c0fa0256b957949c2c"
+    },
+    "action9_bias_analysis": {
+      "path": "demo_results/action9_bias_analysis.md",
+      "exists": true,
+      "bytes": 4072,
+      "sha256": "d029d78c3cd718f6605aead399a643c654a6f4ff320da9d35c7bc8571b27b6b9"
+    },
+    "advisor_review_report": {
+      "path": "demo_results/advisor_review_report.md",
+      "exists": true,
+      "bytes": 6227,
+      "sha256": "a5f3699b347c104b78e50713577831f18297f4238b0a7aa9fc41151a62cb4ff3"
+    },
+    "experiment_pip_freeze": {
+      "path": "demo_results/extended_experiments/20260628_235508/pip_freeze.txt",
+      "exists": true,
+      "bytes": 1393,
+      "sha256": "9961bdac9933a204507968c007c562cad9a7a9609564c394c2c43f5046c9c404"
+    },
+    "contact_sheet": {
+      "path": "demo_results/extended_experiments/20260628_235508/video_frame_contact_sheet.png",
+      "exists": true,
+      "bytes": 1758284,
+      "sha256": "fcbe5d7a255c53daffe8e4af14e55cb704eccbde9d6e9b11720df5c4e02a008b"
+    },
+    "airsim_smoke_results": {
+      "path": "demo_results/airsim_smoke/20260629_005458/results.json",
+      "exists": true,
+      "bytes": 614055,
+      "sha256": "e14b73e1c0fcd2f30637af8e5b293aac6710735ade31b8d063ad3561c23f7f36"
+    },
+    "airsim_smoke_summary": {
+      "path": "demo_results/airsim_smoke/20260629_005458/summary.md",
+      "exists": true,
+      "bytes": 3598,
+      "sha256": "a2562759058138f5e6f6dad8f3cc7bea3eb5c7ec5cc43820e7459805d5984eeb"
+    },
+    "airsim_smoke_log": {
+      "path": "demo_results/airsim_smoke/20260629_005458/run.log",
+      "exists": true,
+      "bytes": 246812,
+      "sha256": "dd56a7ee029d881cab28abb95cd535f3a38a4eb824cad5fd8ff47eabe05a7a06"
+    },
+    "airsim_smoke_analysis": {
+      "path": "demo_results/airsim_smoke/20260629_005458/analysis.md",
+      "exists": true,
+      "bytes": 4169,
+      "sha256": "a6295e9e2527fa694a786da7f159e95f683dd793c0606fe560ed2e6e4503b959"
+    },
+    "airsim_smoke_analysis_json": {
+      "path": "demo_results/airsim_smoke/20260629_005458/analysis.json",
+      "exists": true,
+      "bytes": 26878,
+      "sha256": "c6eb34afd7c759a71a78f2f92da9179964d7b1f783c7ff23701daafa86300eb8"
+    },
+    "airsim_scene_download_manifest": {
+      "path": "demo_results/downloads/env_airsim_16/20260629_002430.json",
+      "exists": true,
+      "bytes": 2512,
+      "sha256": "f6fdfda134f2abd867c2578b9eaa4e20213aee3dfa1511a2a64281352537777e"
+    },
+    "airsim_smoke_contact_sheet": {
+      "path": "demo_results/airsim_smoke/20260629_005458/contact_sheet.png",
+      "exists": true,
+      "bytes": 7393861,
+      "sha256": "01d33b2506826d847fd11a5f36427b49b2a55a90824f71b50848a16e0ccc997d"
+    },
+    "airsim_review_cases": {
+      "path": "demo_results/review_assets/airsim_env16_30_cases/cases.json",
+      "exists": true,
+      "bytes": 4555,
+      "sha256": "ee9ce3f20fa8c76265199a813816df91b916ec2246b8e147720800678c60ddbc"
+    },
+    "airsim_review_case_gallery": {
+      "path": "demo_results/review_assets/airsim_env16_30_cases/case_gallery.png",
+      "exists": true,
+      "bytes": 1675080,
+      "sha256": "47ae8283dea508e2cf8614f18bb50c27b7bb0c4a476f890106c79eb662e033cb"
+    },
+    "airsim_review_readme": {
+      "path": "demo_results/review_assets/airsim_env16_30_cases/README.md",
+      "exists": true,
+      "bytes": 2102,
+      "sha256": "b76bdbbc9f957ff8cac75e8280f55b680998b6daac61335ad4c86e15f22f572e"
+    },
+    "airsim_review_source_analysis": {
+      "path": "demo_results/review_assets/airsim_env16_30_cases/source_analysis.md",
+      "exists": true,
+      "bytes": 4169,
+      "sha256": "a6295e9e2527fa694a786da7f159e95f683dd793c0606fe560ed2e6e4503b959"
+    }
+  },
+  "pip_freeze_path": "demo_results/pip_freeze_openfly.txt",
+  "run_commands": {
+    "single_inference": "cd ~/research/OpenFly-Platform && conda activate openfly && export HF_HUB_ENABLE_HF_TRANSFER=1 && export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True && python -u infer_openfly_4bit.py",
+    "experiment_runner": "cd ~/research/OpenFly-Platform && conda activate openfly && export HF_HUB_ENABLE_HF_TRANSFER=1 && export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True && python -u run_openfly_experiments.py",
+    "audit_generator": "cd ~/research/OpenFly-Platform && conda activate openfly && python -u generate_reproduction_audit.py",
+    "extended_experiment_runner": "cd ~/research/OpenFly-Platform && conda activate openfly && export HF_HUB_ENABLE_HF_TRANSFER=1 && export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True && python -u run_openfly_extended_experiments.py",
+    "airsim_smoke_dry_run": "cd ~/research/OpenFly-Platform && conda activate openfly && python -u eval_airsim_4bit_smoke.py --dry-run --env-name env_airsim_16 --limit 3 --max-steps 20",
+    "hf_auth_login": "hf auth login",
+    "airsim_scene_download": "cd ~/research/OpenFly-Platform && conda activate openfly && export HF_HUB_ENABLE_HF_TRANSFER=1 && python -u download_openfly_airsim_scene.py --env-name env_airsim_16",
+    "airsim_scene_extract_local_zip": "cd ~/research/OpenFly-Platform && conda activate openfly && python -u download_openfly_airsim_scene.py --env-name env_airsim_16 --zip-path /home/ruan/Downloads/env_airsim_16.zip",
+    "airsim_smoke_eval": "cd ~/research/OpenFly-Platform && conda activate openfly && export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True && python -u eval_airsim_4bit_smoke.py --env-name env_airsim_16 --limit 30 --max-steps 20 --save-frames --prepare-settings",
+    "airsim_smoke_analysis": "cd ~/research/OpenFly-Platform && conda activate openfly && python -u analyze_airsim_smoke_results.py demo_results/airsim_smoke/<timestamp>",
+    "airsim_review_assets": "cd ~/research/OpenFly-Platform && conda activate openfly && python -u prepare_airsim_review_assets.py"
+  },
+  "simulation_status": {
+    "airsim_python_client_installed": true,
+    "airsim_scene_env_16_start_script": {
+      "path": "envs/airsim/env_airsim_16/LinuxNoEditor/start.sh",
+      "exists": true,
+      "bytes": 278,
+      "sha256": "361d17ac699623e7a3c85b1c0f6717fe33fa6c9294794491415fd84242f331c1"
+    },
+    "airsim_scene_env_16_ready": true,
+    "hf_cli_skill_installed": true,
+    "airsim_dataset_access_blocker": null,
+    "latest_airsim_smoke": {
+      "path": "demo_results/airsim_smoke/20260629_005458/results.json",
+      "dry_run": false,
+      "num_samples": 30,
+      "env_name": "env_airsim_16",
+      "unnorm_key": "vlnv1",
+      "vehicle_name": "drone_1",
+      "max_steps": 20,
+      "settings_match": true,
+      "mean_ne": 76.45658647164754,
+      "mean_sr": 0.16666666666666666,
+      "mean_osr": 0.5666666666666667,
+      "mean_spl": 0.1346144473653307,
+      "first_sample_steps": 12,
+      "first_sample_actions": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        0
+      ],
+      "first_sample_image_error": null,
+      "first_sample_final_distance": 7.435882049564856,
+      "contact_sheet_path": "demo_results/airsim_smoke/20260629_005458/contact_sheet.png",
+      "sample_summaries": [
+        {
+          "sample_index": 0,
+          "image_path": "env_airsim_16/astar_data/medium_average/2025-1-9_13-18-9_387451659",
+          "steps_run": 12,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            0
+          ],
+          "ne": 7.435882049564856,
+          "sr": 1,
+          "osr": 1,
+          "spl": 1.0461131979892038,
+          "image_error": null
+        },
+        {
+          "sample_index": 1,
+          "image_path": "env_airsim_16/astar_data/low_average/2025-1-1_0-49-51_970925433",
+          "steps_run": 14,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            1,
+            1,
+            9,
+            9,
+            1,
+            0
+          ],
+          "ne": 90.85339143279329,
+          "sr": 0,
+          "osr": 1,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 2,
+          "image_path": "env_airsim_16/astar_data/medium_long/2025-1-9_16-34-14_1894519218",
+          "steps_run": 20,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            3,
+            9,
+            9,
+            3,
+            9,
+            9,
+            9,
+            3,
+            9,
+            3,
+            3,
+            9,
+            9
+          ],
+          "ne": 37.88222007098234,
+          "sr": 0,
+          "osr": 1,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 3,
+          "image_path": "env_airsim_16/astar_data/medium_long_updown/2025-1-14_5-10-53_402903177",
+          "steps_run": 1,
+          "actions": [
+            0
+          ],
+          "ne": 136.39230484541326,
+          "sr": 0,
+          "osr": 0,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 4,
+          "image_path": "env_airsim_16/astar_data/high_average/2025-1-9_22-11-24_113974112",
+          "steps_run": 20,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "ne": 83.5876260843309,
+          "sr": 0,
+          "osr": 0,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 5,
+          "image_path": "env_airsim_16/astar_data/low_average/2025-01-18_22-38-15_466040",
+          "steps_run": 1,
+          "actions": [
+            0
+          ],
+          "ne": 104.49797006991558,
+          "sr": 0,
+          "osr": 0,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 6,
+          "image_path": "env_airsim_16/astar_data/high_short/2025-1-9_20-15-25_153162844",
+          "steps_run": 11,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            1,
+            1,
+            2,
+            0
+          ],
+          "ne": 19.725913255430303,
+          "sr": 1,
+          "osr": 1,
+          "spl": 0.7245859041390385,
+          "image_error": null
+        },
+        {
+          "sample_index": 7,
+          "image_path": "env_airsim_16/astar_data/medium_short/2025-1-9_16-27-8_1857300821",
+          "steps_run": 9,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            0
+          ],
+          "ne": 19.04165653797063,
+          "sr": 1,
+          "osr": 1,
+          "spl": 0.7399991368728666,
+          "image_error": null
+        },
+        {
+          "sample_index": 8,
+          "image_path": "env_airsim_16/astar_data/medium_long/2025-1-9_21-25-50_331016259",
+          "steps_run": 8,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            1,
+            1,
+            1,
+            0
+          ],
+          "ne": 101.42518387483868,
+          "sr": 0,
+          "osr": 0,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 9,
+          "image_path": "env_airsim_16/astar_data/medium_average/2025-1-9_15-0-36_1930772757",
+          "steps_run": 20,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "ne": 90.2544682315358,
+          "sr": 0,
+          "osr": 0,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 10,
+          "image_path": "env_airsim_16/astar_data/medium_average/2025-1-9_19-10-56_2107654819",
+          "steps_run": 20,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            3,
+            1,
+            9
+          ],
+          "ne": 64.85627241501763,
+          "sr": 0,
+          "osr": 1,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 11,
+          "image_path": "env_airsim_16/astar_data/medium_short/2025-1-9_12-21-53_1470503465",
+          "steps_run": 12,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            0
+          ],
+          "ne": 56.99999999999954,
+          "sr": 0,
+          "osr": 1,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 12,
+          "image_path": "env_airsim_16/astar_data/medium_average/2025-1-9_15-26-9_395279207",
+          "steps_run": 20,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            3
+          ],
+          "ne": 71.60791628166284,
+          "sr": 0,
+          "osr": 1,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 13,
+          "image_path": "env_airsim_16/astar_data/high_average/2025-1-9_16-57-31_515530019",
+          "steps_run": 20,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "ne": 60.472104912800404,
+          "sr": 0,
+          "osr": 0,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 14,
+          "image_path": "env_airsim_16/astar_data/low_average_updown/2025-1-14_8-48-9_962980710",
+          "steps_run": 1,
+          "actions": [
+            0
+          ],
+          "ne": 105.25550646920237,
+          "sr": 0,
+          "osr": 0,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 15,
+          "image_path": "env_airsim_16/astar_data/low_long/2025-1-1_2-36-19_262692685",
+          "steps_run": 20,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            0
+          ],
+          "ne": 26.776010107996846,
+          "sr": 0,
+          "osr": 1,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 16,
+          "image_path": "env_airsim_16/astar_data/medium_average_updown/2025-1-14_2-2-16_1335354340",
+          "steps_run": 1,
+          "actions": [
+            0
+          ],
+          "ne": 104.50475988480679,
+          "sr": 0,
+          "osr": 0,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 17,
+          "image_path": "env_airsim_16/astar_data/low_long_updown/2025-01-19_05-00-37_230566",
+          "steps_run": 1,
+          "actions": [
+            0
+          ],
+          "ne": 164.22355638099154,
+          "sr": 0,
+          "osr": 0,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 18,
+          "image_path": "env_airsim_16/astar_data/high_average/2025-1-10_0-31-52_1017565625",
+          "steps_run": 20,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "ne": 166.71569837517936,
+          "sr": 0,
+          "osr": 1,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 19,
+          "image_path": "env_airsim_16/astar_data/high_short/2025-1-9_17-25-53_846811127",
+          "steps_run": 7,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            0
+          ],
+          "ne": 7.565107708261805,
+          "sr": 1,
+          "osr": 1,
+          "spl": 1.02774907046191,
+          "image_error": null
+        },
+        {
+          "sample_index": 20,
+          "image_path": "env_airsim_16/astar_data/high_long/2025-1-9_21-48-4_480298490",
+          "steps_run": 20,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            1,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "ne": 43.82308546375866,
+          "sr": 0,
+          "osr": 1,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 21,
+          "image_path": "env_airsim_16/astar_data/medium_short_updown/2025-1-14_17-35-24_452456682",
+          "steps_run": 1,
+          "actions": [
+            0
+          ],
+          "ne": 80.00715977825426,
+          "sr": 0,
+          "osr": 0,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 22,
+          "image_path": "env_airsim_16/astar_data/medium_average/2025-1-9_19-18-17_1005418816",
+          "steps_run": 10,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            3,
+            9,
+            9,
+            9,
+            9,
+            0
+          ],
+          "ne": 39.07907689886009,
+          "sr": 0,
+          "osr": 0,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 23,
+          "image_path": "env_airsim_16/astar_data/medium_average/2025-1-9_13-54-35_1023457753",
+          "steps_run": 20,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            3,
+            9,
+            9,
+            3,
+            1,
+            3,
+            9,
+            9,
+            9,
+            1,
+            3,
+            3
+          ],
+          "ne": 41.17318125476344,
+          "sr": 0,
+          "osr": 1,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 24,
+          "image_path": "env_airsim_16/astar_data/high_short/2025-1-9_21-9-15_2125023787",
+          "steps_run": 20,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "ne": 115.4096126455607,
+          "sr": 0,
+          "osr": 1,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 25,
+          "image_path": "env_airsim_16/astar_data/low_long_updown/2025-1-15_0-20-26_1584710873",
+          "steps_run": 1,
+          "actions": [
+            0
+          ],
+          "ne": 139.1019875097726,
+          "sr": 0,
+          "osr": 0,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 26,
+          "image_path": "env_airsim_16/astar_data/low_short_updown/2025-01-19_06-17-38_215421",
+          "steps_run": 1,
+          "actions": [
+            0
+          ],
+          "ne": 89.07990651290996,
+          "sr": 0,
+          "osr": 0,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 27,
+          "image_path": "env_airsim_16/astar_data/high_short/2025-1-9_16-47-42_2142757034",
+          "steps_run": 5,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            0
+          ],
+          "ne": 18.0,
+          "sr": 1,
+          "osr": 1,
+          "spl": 0.4999861114969029,
+          "image_error": null
+        },
+        {
+          "sample_index": 28,
+          "image_path": "env_airsim_16/astar_data/medium_short/2025-1-9_15-19-1_981914693",
+          "steps_run": 20,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "ne": 131.2241222323507,
+          "sr": 0,
+          "osr": 1,
+          "spl": 0.0,
+          "image_error": null
+        },
+        {
+          "sample_index": 29,
+          "image_path": "env_airsim_16/astar_data/medium_average/2025-1-9_20-2-55_922587542",
+          "steps_run": 20,
+          "actions": [
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            1,
+            1,
+            9,
+            9,
+            9,
+            1
+          ],
+          "ne": 76.72591286450111,
+          "sr": 0,
+          "osr": 1,
+          "spl": 0.0,
+          "image_error": null
+        }
+      ]
+    },
+    "latest_airsim_summary": "demo_results/airsim_smoke/20260629_005458/summary.md",
+    "latest_airsim_log": "demo_results/airsim_smoke/20260629_005458/run.log",
+    "latest_airsim_analysis": "demo_results/airsim_smoke/20260629_005458/analysis.md",
+    "latest_airsim_analysis_json": "demo_results/airsim_smoke/20260629_005458/analysis.json",
+    "latest_airsim_contact_sheet": "demo_results/airsim_smoke/20260629_005458/contact_sheet.png",
+    "airsim_metrics": {
+      "mean_ne": 76.45658647164754,
+      "mean_sr": 0.16666666666666666,
+      "mean_osr": 0.5666666666666667,
+      "mean_spl": 0.1346144473653307,
+      "num_samples": 30
+    },
+    "airsim_warning_summary": {
+      "counts": {
+        "FutureWarning": 3,
+        "UserWarning": 392,
+        "deprecated": 1,
+        "Traceback": 0,
+        "Exception": 0,
+        "out_of_memory": 0,
+        "OOM": 0
+      },
+      "non_fatal_warnings_only": true
+    }
+  },
+  "referenced_experiment": {
+    "path": "demo_results/extended_experiments/20260628_235508",
+    "results_path": "demo_results/extended_experiments/20260628_235508/results.json",
+    "summary_path": "demo_results/extended_experiments/20260628_235508/summary.md",
+    "log_path": "demo_results/extended_experiments/20260628_235508/run.log",
+    "embedded_metadata": {
+      "has_git": true,
+      "has_model_revision": true,
+      "has_input_hashes": false,
+      "has_warning_summary": true,
+      "has_pip_freeze_path": true
+    },
+    "metadata_note": "Older experiment runs may not contain embedded hashes; this audit records current files and marks embedded metadata availability explicitly.",
+    "summary": {
+      "num_experiments": 17,
+      "group_counts": {
+        "baseline": 2,
+        "official_prompt": 10,
+        "video_frames": 5
+      },
+      "baseline_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "baseline_rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "baseline_repeat_l2": 0.0,
+      "max_prompt_l2": 15.007434784404385,
+      "max_frame_l2": 5.079023358637519,
+      "peak_gpu_allocated_mb": 4466.9
+    }
+  },
+  "warning_summary": {
+    "counts": {
+      "FutureWarning": 3,
+      "UserWarning": 392,
+      "dependency_version_warning": 1,
+      "deprecated": 1,
+      "no_op": 392,
+      "Traceback": 0,
+      "Exception": 0,
+      "out_of_memory": 0,
+      "OOM": 0
+    },
+    "non_fatal_warnings_only": true,
+    "notes": [
+      "The timm/meta tensor 'no-op' warnings were observed during vision-backbone checkpoint loading.",
+      "The run is considered successful only when no Traceback/Exception/OOM appears and all actions are recorded."
+    ]
+  },
+  "limitations": [
+    "This is not a full OpenFly benchmark reproduction because NE/SR/OSR/SPL evaluation requires simulation environments and benchmark trajectories.",
+    "The prompt sensitivity tests use local video frames and lightweight prompts, not matched official image trajectories.",
+    "Official-style prompts in extended experiments are intentionally paired with local demo frames, so they cannot be interpreted as trajectory success evaluation.",
+    "The current worktree is intentionally recorded as dirty because demo files, scripts, and results are untracked local reproduction artifacts."
+  ]
+}
